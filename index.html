@@ -20,28 +20,93 @@
   <!-- ========================================================= -->
   <main class="hero-section" id="hero">
     
-    <!-- Top Header Navigation -->
-    <header class="hero-header">
-      <a href="#hero" class="brand-identity" aria-label="ATBUDEVS Home">
+    <!-- Redesigned Header Navigation (Recreating Reference Design) -->
+    <header class="hero-header" id="site-header">
+      
+      <!-- Brand Identity (Logo + Two-Tier Wordmark) -->
+      <a href="#hero" class="brand-identity" aria-label="ATBU Developers Club Home">
         <img 
           src="atbu-removebg-preview.png" 
           alt="ATBU Developers Club Official Seal" 
           class="brand-logo"
-          width="44"
-          height="44"
+          width="42"
+          height="42"
         />
         <div class="brand-naming">
-          <span class="brand-title">ATBU<span class="brand-accent">DEVS</span></span>
-          <span class="brand-subtitle">Developers Club</span>
+          <span class="brand-title">ATBUDEVS</span>
+          <span class="brand-subtitle">DEVELOPERS CLUB</span>
         </div>
       </a>
 
-      <nav class="hero-nav" aria-label="Main Navigation">
+      <!-- Desktop Navigation Links (Constitution-Informed Information Architecture) -->
+      <nav class="hero-nav" id="hero-nav" aria-label="Main Navigation">
+        <a href="#about" class="nav-item">About</a>
+        <a href="#activities" class="nav-item">Activities</a>
+        <a href="#learning" class="nav-item">Learning</a>
+        <a href="#community" class="nav-item">Community</a>
         <a href="CONSTITUTION.md" class="nav-item" target="_blank" rel="noopener noreferrer">Constitution</a>
-        <a href="DESIGN_SYSTEM.md" class="nav-item" target="_blank" rel="noopener noreferrer">Design System</a>
-        <a href="#join" class="nav-item nav-action">Join Club</a>
       </nav>
+
+      <!-- Right Action Group (Pill CTA + Circular Charter Info Button) -->
+      <div class="header-actions">
+        <a href="#membership" class="header-cta-pill" aria-label="Join ATBUDEVS Club">
+          <span>Join Club</span>
+          <svg class="header-cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <a href="CONSTITUTION.md" target="_blank" rel="noopener noreferrer" class="header-cta-circle" aria-label="Official Constitution and Charter Information" title="Official Constitution & Charter">
+          <span class="header-circle-symbol" aria-hidden="true">?</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open Navigation Menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+
     </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="mobile-drawer-backdrop" id="mobile-drawer-backdrop"></div>
+      <div class="mobile-drawer-panel">
+        <div class="mobile-drawer-top">
+          <div class="brand-identity">
+            <img src="atbu-removebg-preview.png" alt="ATBU Developers Club Seal" class="brand-logo" width="36" height="36" />
+            <div class="brand-naming">
+              <span class="brand-title">ATBUDEVS</span>
+              <span class="brand-subtitle">DEVELOPERS CLUB</span>
+            </div>
+          </div>
+          <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close Navigation Menu">
+            &times;
+          </button>
+        </div>
+
+        <nav class="mobile-drawer-nav" aria-label="Mobile Navigation">
+          <a href="#about" class="mobile-nav-link">About</a>
+          <a href="#activities" class="mobile-nav-link">Activities</a>
+          <a href="#learning" class="mobile-nav-link">Learning</a>
+          <a href="#community" class="mobile-nav-link">Community</a>
+          <a href="CONSTITUTION.md" class="mobile-nav-link" target="_blank" rel="noopener noreferrer">Constitution (v1.0)</a>
+        </nav>
+
+        <div class="mobile-drawer-bottom">
+          <a href="#membership" class="header-cta-pill mobile-full-width">
+            <span>Join Club</span>
+            <svg class="header-cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
 
     <!-- Hero Content (Left-Aligned, High-Contrast Typography Hierarchy) -->
     <div class="hero-body">
@@ -60,7 +125,7 @@
 
         <!-- Single Primary CTA (Pill with Arrow Icon Circle) -->
         <div class="hero-actions">
-          <a href="#join" class="btn-pill-cta" id="hero-primary-cta" aria-label="Explore Community">
+          <a href="#membership" class="btn-pill-cta" id="hero-primary-cta" aria-label="Explore Community">
             <span class="btn-pill-icon-wrap" aria-hidden="true">
               <svg class="btn-pill-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -76,6 +141,45 @@
 
   </main>
 
+  <!-- Mobile Drawer Toggle Script (Vanilla JS, Zero Dependencies) -->
+  <script>
+    (function() {
+      const toggleBtn = document.getElementById('mobile-menu-toggle');
+      const closeBtn = document.getElementById('mobile-drawer-close');
+      const backdrop = document.getElementById('mobile-drawer-backdrop');
+      const drawer = document.getElementById('mobile-drawer');
+      const navLinks = document.querySelectorAll('.mobile-nav-link, .mobile-drawer-bottom a');
+
+      function openDrawer() {
+        drawer.classList.add('is-open');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        drawer.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove('is-open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        drawer.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      if (toggleBtn) toggleBtn.addEventListener('click', openDrawer);
+      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+      if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', closeDrawer);
+      });
+
+      window.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+          closeDrawer();
+        }
+      });
+    })();
+  </script>
+
   <!-- ========================================================================= -->
   <!-- TEMPORARILY DISABLED SUBSEQUENT SECTIONS (Preserved in Source for Later)  -->
   <!-- ========================================================================= -->
@@ -84,91 +188,29 @@
     <div class="content-wrapper">
       <div class="section-badge">About ATBUDEVS</div>
       <h2 class="section-heading">Nurturing ethical developers, innovators, and digital leaders.</h2>
-      <p class="section-intro">
-        Established under the authority of Abubakar Tafawa Balewa University, ATBUDEVS is a student-led, innovation-driven technology community dedicated to practical excellence and collaborative learning.
-      </p>
-      <div class="values-grid">
-        <div class="value-item">
-          <div class="value-indicator" style="background-color: var(--color-celadon);"></div>
-          <h3 class="value-title">Learn</h3>
-          <p class="value-text">Continuous acquisition of technical knowledge, modern development methodologies, and hands-on professional problem solving.</p>
-        </div>
-        <div class="value-item">
-          <div class="value-indicator" style="background-color: var(--color-peach-glow);"></div>
-          <h3 class="value-title">Build</h3>
-          <p class="value-text">Transforming creative ideas into functional, production-ready software and systems through rigorous engineering and teamwork.</p>
-        </div>
-        <div class="value-item">
-          <div class="value-indicator" style="background-color: var(--color-light-blue);"></div>
-          <h3 class="value-title">Impact</h3>
-          <p class="value-text">Deploying technology for the tangible advancement of Abubakar Tafawa Balewa University, our communities, and the African tech ecosystem.</p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <section class="section-container section-alt" id="tracks">
+  <section class="section-container section-alt" id="activities">
+    <div class="content-wrapper">
+      <div class="section-badge">Activities & Programs</div>
+      <h2 class="section-heading">Bootcamps, Hackathons, Workshops & Annual Summit.</h2>
+    </div>
+  </section>
+
+  <section class="section-container" id="learning">
     <div class="content-wrapper">
       <div class="section-badge">Learning Tracks</div>
       <h2 class="section-heading">Specialized pathways for every level of experience.</h2>
-      <div class="tracks-list">
-        <div class="track-card">
-          <span class="track-tag" style="color: var(--color-celadon); border-color: rgba(173, 247, 182, 0.4);">Core</span>
-          <h3 class="track-name">Software & Systems Engineering</h3>
-          <p class="track-desc">Data structures, algorithms, backend architecture, API design, and scalable distributed applications.</p>
-        </div>
-        <div class="track-card">
-          <span class="track-tag" style="color: var(--color-light-blue); border-color: rgba(160, 206, 217, 0.4);">Frontend & Mobile</span>
-          <h3 class="track-name">Web & Mobile Development</h3>
-          <p class="track-desc">Modern responsive web applications, progressive interfaces, and cross-platform mobile apps with Flutter and React.</p>
-        </div>
-        <div class="track-card">
-          <span class="track-tag" style="color: var(--color-light-gold); border-color: rgba(255, 238, 147, 0.4);">Intelligence</span>
-          <h3 class="track-name">AI, Data Science & Machine Learning</h3>
-          <p class="track-desc">Practical machine learning, data engineering, statistical modeling, and applied AI applications for regional challenges.</p>
-        </div>
-        <div class="track-card">
-          <span class="track-tag" style="color: var(--color-peach-glow); border-color: rgba(255, 192, 159, 0.4);">Infrastructure</span>
-          <h3 class="track-name">Cloud, DevOps & Cybersecurity</h3>
-          <p class="track-desc">CI/CD pipelines, container orchestration, Linux server administration, network protocols, and ethical security practices.</p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <section class="section-container" id="join">
+  <section class="section-container section-alt" id="community">
     <div class="content-wrapper">
-      <div class="section-badge">Membership</div>
+      <div class="section-badge">Community & Membership</div>
       <h2 class="section-heading">Join Abubakar Tafawa Balewa University Developers Club.</h2>
-      <div class="join-action-box">
-        <form class="join-form" onsubmit="event.preventDefault(); alert('Registration submitted! Welcome to ATBUDEVS.');">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fullName">Full Name</label>
-              <input type="text" id="fullName" name="fullName" placeholder="e.g. Fatima Abubakar" required />
-            </div>
-            <div class="form-group">
-              <label for="matricNo">Matriculation / ID Number</label>
-              <input type="text" id="matricNo" name="matricNo" placeholder="e.g. 19/47821U/1" required />
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Complete Membership Registration</button>
-        </form>
-      </div>
     </div>
   </section>
-
-  <footer class="site-footer">
-    <div class="footer-wrapper">
-      <div class="footer-brand">
-        <img src="atbu-removebg-preview.png" alt="ATBUDEVS" width="36" height="36" />
-        <span class="footer-title">ATBU Developers Club</span>
-      </div>
-      <p class="footer-copy">
-        &copy; 2026 Abubakar Tafawa Balewa University Developers Club (ATBUDEVS). All rights reserved.
-      </p>
-    </div>
-  </footer>
   -->
 
 </body>

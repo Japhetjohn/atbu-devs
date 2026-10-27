@@ -9,7 +9,7 @@ The following five colors constitute the official and exclusive brand palette fo
 | `--color-peach-glow` | **Peach Glow** | `#FFC09F` | `rgb(255, 192, 159)` | Headline bold emphasis, warm focal highlights, hover states |
 | `--color-light-gold` | **Light Gold** | `#FFEE93` | `rgb(255, 238, 147)` | Primary CTA hover state, badges, key milestone highlights |
 | `--color-lemon-chiffon`| **Lemon Chiffon**| `#FCF5C7` | `rgb(252, 245, 199)`| Brand subtitle, delicate indicators |
-| `--color-light-blue` | **Light Blue** | `#A0CED9` | `rgb(160, 206, 217)`| Header links, tag chips, focus outlines |
+| `--color-light-blue` | **Light Blue** | `#A0CED9` | `rgb(160, 206, 217)`| Header links, nav hover indicator, focus outlines |
 | `--color-celadon` | **Celadon** | `#ADF7B6` | `rgb(173, 247, 182)`| Primary CTA button background, success indicators |
 
 ### Supporting Accessible Neutrals
@@ -22,7 +22,28 @@ The following five colors constitute the official and exclusive brand palette fo
 
 ---
 
-## 2. Typography System (Editorial Studio Direction)
+## 2. Header & Navigation Architecture (Reference-Inspired Design)
+
+Recreating the modern, clean, editorial header treatment:
+- **Brand Identity**:
+  - Official ATBUDEVS Emblem (`atbu-removebg-preview.png`, `42px x 42px`).
+  - Two-tier wordmark: `ATBUDEVS` (bold, letter-spacing `0.05em`) + `DEVELOPERS CLUB` (uppercase, letter-spacing `0.14em`, Lemon Chiffon).
+- **Navigation Items (Constitution-Informed)**:
+  - `About` (`#about`) — Article II: Mission, Philosophy & Core Values.
+  - `Activities` (`#activities`) — Article II Section 10: Bootcamps, Hackathons, Workshops & Summit.
+  - `Learning` (`#learning`) — Article II Section 7: Software Engineering, Web, Mobile, AI, Cloud.
+  - `Community` (`#community`) — Article III: Membership & Student Developers.
+  - `Constitution` (`CONSTITUTION.md`) — Supreme governing instrument & official charter.
+- **Header Actions Group**:
+  - **Pill CTA Button**: `Join Club →` in Celadon (`#ADF7B6`), dark text (`#06130B`), `1.5px solid #06130b` border, and offset stylized drop shadow (`2px 2px 0px #06130b`), shifting on hover to Light Gold (`#FFEE93`) with a rightward arrow nudge.
+  - **Circular Charter Button**: `36px` circular button with `?` symbol in Celadon/Dark text with matching offset shadow, linking to `CONSTITUTION.md`.
+- **Mobile Responsive Drawer**:
+  - Accessible hamburger button on screens ≤ 900px (`aria-expanded`, `aria-controls`).
+  - Slide-in glassmorphism panel with full navigation links, comfortable touch targets, and full-width `Join Club` button.
+
+---
+
+## 3. Typography System (Editorial Studio Direction)
 
 Following the modern editorial studio reference:
 - **Primary Typeface**: `Inter Tight` (with fallback to `Manrope` and system grotesk/sans-serif).
@@ -35,28 +56,15 @@ Following the modern editorial studio reference:
   - **Letter-spacing**: `-0.035em` on light text, `-0.04em` on bold text.
 - **Supporting Paragraph**:
   - `font-weight: 350`, `font-size: clamp(1.05rem, 1.25vw, 1.15rem)` (mobile: `0.975rem – 1.05rem`).
-  - `line-height: 1.6`, `max-width: 520px` (mobile: full width), color `rgba(255, 255, 255, 0.85)`.
-- **Navigation**:
-  - `font-weight: 500`, `font-size: 0.925rem`, letter-spacing `-0.01em`.
+  - `line-height: 1.62`, `max-width: 520px` (mobile: full width), color `rgba(255, 255, 255, 0.85)`.
 
 ---
 
-## 3. Visual Composition & Viewport Principles
+## 4. Hero Primary CTA ("Explore Community")
 
-1. **Single-Screen Hero (Desktop)**:
-   - On desktop, the page renders exclusively the header and the hero section within full viewport height (`100vh` / `100dvh`), with zero vertical scrolling.
-   - Zero content or promotional sections rendered beneath the CTA.
-2. **Mobile Hero Layout (Responsive Sizing)**:
-   - Dynamic viewport height (`min-height: 100svh; min-height: 100dvh;`).
-   - Mobile gutters: consistent `1.5rem` (or `1.15rem` on ≤390px screens).
-   - Left-aligned edge for headline, paragraph, and CTA.
-   - Dual-gradient overlay (top-to-bottom and left-to-right) ensuring WCAG AAA text contrast while keeping background community members visible.
-   - Zero horizontal overflow (`overflow-x: hidden`).
-3. **Pill-Shaped Arrow CTA Button (Single Primary CTA — "Explore Community")**:
-   - Silhouette: Full pill (`border-radius: 9999px`).
-   - Left icon badge: Inset white circular disc with a 2px contrasting dark border and a right-pointing arrow (`→`).
-   - Fill: Solid Celadon (`#ADF7B6`) with `#06130B` bold typography.
-   - Label: **Explore Community**.
-   - Touch accessibility: Minimum 48px height on mobile.
-   - Hover transition: Shifts smoothly to Light Gold (`#FFEE93`), arrow icon shifts subtly to the right (+3px).
-   - Only ONE primary CTA; no competing secondary button.
+- **Silhouette**: Full pill (`border-radius: 9999px`).
+- **Left icon badge**: Inset white circular disc with a 2px contrasting dark border and a right-pointing arrow (`→`).
+- **Fill**: Solid Celadon (`#ADF7B6`) with `#06130B` bold typography.
+- **Label**: **Explore Community**.
+- **Touch accessibility**: Minimum 48px height on mobile.
+- **Hover transition**: Shifts smoothly to Light Gold (`#FFEE93`), arrow icon shifts subtly to the right (+3px).

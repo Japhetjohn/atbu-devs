@@ -16,13 +16,18 @@ All AI coding assistants, developers, and tools working on this codebase must st
 - Always use the centralized CSS custom properties declared in `styles.css` (`--color-peach-glow`, `--color-light-gold`, `--color-lemon-chiffon`, `--color-light-blue`, `--color-celadon`).
 - Ensure all text has sufficient WCAG contrast against background surfaces.
 
-## 2. EDITORIAL TYPOGRAPHY & HERO COMPOSITION
+## 2. EDITORIAL TYPOGRAPHY, HEADER & HERO ARCHITECTURE
 
 - **Typeface**: `Inter Tight` (primary) / `Manrope` (fallback).
-- **Headline Contrast**: Strong contrast between a Light (`font-weight: 300`) opening line in white, and an ExtraBold (`font-weight: 850`) emphasized phrase in Peach Glow (`#FFC09F`).
-- **Single-Screen Hero**: The current development phase renders ONLY the header and hero section within full viewport height (`100vh` / `100dvh`), with zero vertical scrolling on standard desktop.
-- **Mobile Experience**: Responsive typography using `clamp()`, dynamic viewport units (`100svh`), consistent left gutters (`1.5rem` / `1.15rem`), zero horizontal overflow, and dual-layer contrast gradients.
-- **Single Primary CTA**: Modern pill-shaped button (`border-radius: 9999px`) in Celadon (`#ADF7B6`), featuring an inset white circular badge on the left with a contrasting dark outline and right-pointing arrow (`→`), with clear dark text (`#06130B`) reading **"Explore Community"**. Only one primary CTA button; no secondary button.
+- **Header & Navigation (Reference-Inspired)**:
+  - Two-tier brand wordmark: `ATBUDEVS` + `DEVELOPERS CLUB` alongside official seal.
+  - Constitution-informed links: `About` (`#about`), `Activities` (`#activities`), `Learning` (`#learning`), `Community` (`#community`), `Constitution` (`CONSTITUTION.md`).
+  - Dual action group: Celadon pill button (`Join Club →`) with offset shadow + circular `?` charter info button.
+  - Mobile drawer with accessible hamburger toggle (`≤900px`).
+- **Hero Composition**:
+  - Headline: Contrast between Light 300 opening line in white, and ExtraBold 850 emphasized phrase in Peach Glow (`#FFC09F`).
+  - Single Primary Hero CTA: Pill-shaped button (`border-radius: 9999px`) in Celadon with inset white arrow disc, reading **"Explore Community"**.
+  - Single-Screen on desktop (`100vh` / `100dvh`), zero vertical scroll on standard desktop.
 - **Strictly NO cards**, NO floating glassmorphic containers, NO white boxes, NO decorative geometric blobs, and NO fake stats counters.
 
 ## 3. PROJECT DOCUMENTATION REFERENCE
