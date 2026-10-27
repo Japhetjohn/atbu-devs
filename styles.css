@@ -151,28 +151,35 @@ a {
 }
 
 .brand-title {
-  font-size: 1.18rem;
+  font-family: var(--font-family);
+  font-size: 1.25rem;
   font-weight: 850;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.04em;
   color: var(--color-white);
-  line-height: 1.1;
+  line-height: 1.08;
+}
+
+.brand-accent {
+  color: var(--color-peach-glow);
+  font-weight: 850;
 }
 
 .brand-subtitle {
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-family: var(--font-family);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-lemon-chiffon);
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 /* Desktop Navigation Links */
 .hero-nav {
   display: flex;
   align-items: center;
-  gap: 2.25rem;
-  margin: 0 1.5rem;
+  gap: 1.85rem;
+  margin: 0 1.25rem;
 }
 
 .nav-item {
@@ -595,12 +602,16 @@ a {
 /* --------------------------------------------------------------------------
    RESPONSIVE DESIGN RULES (Tablet & Mobile Header Adjustments)
    -------------------------------------------------------------------------- */
-@media (max-width: 1080px) and (min-width: 901px) {
+@media (max-width: 1200px) and (min-width: 901px) {
   .hero-header {
-    padding: 1.5rem 2.5rem;
+    padding: 1.5rem 2rem;
   }
   .hero-nav {
-    gap: 1.5rem;
+    gap: 1.25rem;
+    margin: 0 0.85rem;
+  }
+  .nav-item {
+    font-size: 0.88rem;
   }
   .hero-body {
     padding: 2rem 2.5rem 3.5rem 2.5rem;

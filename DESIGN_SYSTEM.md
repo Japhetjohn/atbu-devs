@@ -27,12 +27,13 @@ The following five colors constitute the official and exclusive brand palette fo
 Recreating the modern, clean, editorial header treatment:
 - **Brand Identity**:
   - Official ATBUDEVS Emblem (`atbu-removebg-preview.png`, `42px x 42px`).
-  - Two-tier wordmark: `ATBUDEVS` (bold, letter-spacing `0.05em`) + `DEVELOPERS CLUB` (uppercase, letter-spacing `0.14em`, Lemon Chiffon).
+  - Two-tier wordmark: `ATBUDEVS` in ExtraBold (`font-weight: 850; letter-spacing: -0.04em`, matching the headline emphasis) with Peach Glow accent + `DEVELOPERS CLUB` in uppercase Lemon Chiffon.
 - **Navigation Items (Constitution-Informed)**:
   - `About` (`#about`) — Article II: Mission, Philosophy & Core Values.
   - `Activities` (`#activities`) — Article II Section 10: Bootcamps, Hackathons, Workshops & Summit.
   - `Learning` (`#learning`) — Article II Section 7: Software Engineering, Web, Mobile, AI, Cloud.
   - `Community` (`#community`) — Article III: Membership & Student Developers.
+  - `Partners` (`#partners`) — Article II Section 7(vi): Industry Partnerships & Collaborations.
   - `Constitution` (`CONSTITUTION.md`) — Supreme governing instrument & official charter.
 - **Header Actions Group**:
   - **Pill CTA Button**: `Join Club →` in Celadon (`#ADF7B6`), dark text (`#06130B`), `1.5px solid #06130b` border, and offset stylized drop shadow (`2px 2px 0px #06130b`), shifting on hover to Light Gold (`#FFEE93`) with a rightward arrow nudge.
