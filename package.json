@@ -1,0 +1,19 @@
+{
+  "name": "atbu-devs",
+  "version": "1.0.0",
+  "description": "Abubakar Tafawa Balewa University Developers Club (ATBUDEVS) Official Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "atbu",
+    "atbudevs",
+    "developers-club",
+    "software-engineering",
+    "university"
+  ],
+  "author": "ATBU Developers Club Executive Council",
+  "license": "ISC"
+}
