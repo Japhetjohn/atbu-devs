@@ -2316,61 +2316,91 @@ a {
     overflow-x: hidden;
   }
 
+  /* Full Dynamic Mobile Viewport Coverage */
   .hero-section {
-    height: auto;
     min-height: 100vh;
     min-height: 100svh;
     min-height: 100dvh;
-    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 0;
+    
+    /* Balanced photographic gradient overlay: ensures text readability without obscuring background subjects */
     background-image:
       linear-gradient(
         to bottom,
-        rgba(8, 12, 20, 0.94) 0%,
-        rgba(8, 12, 20, 0.90) 38%,
-        rgba(8, 12, 20, 0.78) 66%,
-        rgba(8, 12, 20, 0.92) 100%
+        rgba(8, 12, 20, 0.88) 0%,
+        rgba(8, 12, 20, 0.72) 35%,
+        rgba(8, 12, 20, 0.78) 70%,
+        rgba(8, 12, 20, 0.94) 100%
       ),
       linear-gradient(
         to right,
-        rgba(8, 12, 20, 0.90) 0%,
-        rgba(8, 12, 20, 0.60) 100%
+        rgba(8, 12, 20, 0.75) 0%,
+        rgba(8, 12, 20, 0.40) 100%
       ),
-      url('background.jpeg');
-    background-position: 68% 25%;
+      url('assets/media/background.jpeg');
+    background-position: 65% center;
     background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .hero-header {
     padding: 1.25rem 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Clean, spacious mobile header: hide desktop header pill CTA in favor of the mobile drawer & hero CTA */
+  .header-cta-pill {
+    display: none;
   }
 
   .brand-logo {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
   }
 
   .brand-title {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
+    letter-spacing: -0.035em;
   }
 
   .brand-subtitle {
-    font-size: 0.58rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
   }
 
+  /* Vertically center content in the mobile viewport to eliminate empty void below */
   .hero-body {
-    padding: 2rem 1.5rem 2.5rem 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
+    padding: 2rem 1.5rem 3.5rem 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .hero-content {
+    width: 100%;
     max-width: 100%;
   }
 
   .hero-headline {
-    font-size: clamp(2.2rem, 8vw, 2.75rem);
-    line-height: 1.12;
-    letter-spacing: -0.03em;
+    font-size: clamp(2.35rem, 9.5vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
     margin-bottom: 1.25rem;
+    width: 100%;
   }
 
   .headline-light {
@@ -2379,32 +2409,41 @@ a {
 
   .headline-bold {
     font-weight: 850;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.04em;
   }
 
   .hero-description {
-    font-size: clamp(0.975rem, 3.8vw, 1.05rem);
-    line-height: 1.58;
-    margin-bottom: 2rem;
+    font-size: clamp(1rem, 3.8vw, 1.12rem);
+    line-height: 1.62;
+    margin-bottom: 2.25rem;
     max-width: 100%;
+    color: rgba(255, 255, 255, 0.88);
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-actions {
+    width: 100%;
   }
 
   .btn-pill-cta {
-    padding: 0.45rem 1.75rem 0.45rem 0.45rem;
-    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
     gap: 1rem;
-    min-height: 48px;
+    padding: 0.5rem 1.75rem 0.5rem 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 650;
+    min-height: 52px;
     max-width: 100%;
   }
 
   .btn-pill-icon-wrap {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
   }
 
   .btn-pill-arrow {
-    width: 16px;
-    height: 16px;
+    width: 17px;
+    height: 17px;
   }
 
   /* Responsive Partners Section for Tablets */
@@ -2930,49 +2969,48 @@ a {
 
 @media (max-width: 480px) {
   .hero-header {
-    padding: 1.1rem 1.15rem;
+    padding: 1rem 1.25rem;
   }
 
-  /* On narrow phones, hide header pill text if needed or keep both compact */
   .header-actions {
-    gap: 0.5rem;
+    gap: 0;
   }
 
   .header-cta-pill {
-    padding: 0.38rem 0.85rem;
-    font-size: 0.8rem;
-  }
-
-  .header-cta-circle {
-    width: 30px;
-    height: 30px;
+    display: none;
   }
 
   .hero-body {
-    padding: 1.75rem 1.15rem 2.25rem 1.15rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1.5rem 1.25rem 3rem 1.25rem;
   }
 
   .hero-headline {
-    font-size: clamp(1.95rem, 8.5vw, 2.25rem);
-    line-height: 1.14;
-    margin-bottom: 1rem;
+    font-size: clamp(2.15rem, 9.2vw, 2.65rem);
+    line-height: 1.12;
+    margin-bottom: 1.1rem;
   }
 
   .hero-description {
-    font-size: 0.95rem;
-    line-height: 1.55;
-    margin-bottom: 1.75rem;
+    font-size: 0.98rem;
+    line-height: 1.58;
+    margin-bottom: 2rem;
   }
 
   .btn-pill-cta {
-    padding: 0.4rem 1.45rem 0.4rem 0.4rem;
-    font-size: 0.95rem;
+    padding: 0.45rem 1.5rem 0.45rem 0.45rem;
+    font-size: 0.98rem;
     gap: 0.85rem;
+    min-height: 48px;
   }
 
   .btn-pill-icon-wrap {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
   }
 
   /* Responsive Partners Section for Mobile Phones */
