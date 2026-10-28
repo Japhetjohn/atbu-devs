@@ -603,7 +603,7 @@ a {
 .partners-section {
   position: relative;
   background-color: var(--color-lemon-chiffon);
-  padding: 4.5rem 0 5rem 0; /* Generous vertical breathing room for larger crests */
+  padding: 3.75rem 0 4.25rem 0; /* py-15 / ~60px-68px vertical breathing room */
   width: 100%;
   overflow: hidden;
   border: none; /* Completely remove any horizontal separator lines or borders */
@@ -630,7 +630,7 @@ a {
   line-height: 1.08;
   color: var(--color-bg-dark); /* Crisp dark tone #080C14 on Lemon Chiffon */
   text-align: center;
-  margin-bottom: 3.25rem;
+  margin-bottom: 3rem;
   user-select: none;
 }
 
@@ -685,25 +685,25 @@ a {
   display: flex;
   width: max-content;
   will-change: transform;
-  animation: partnersMarqueeScroll 48s linear infinite;
+  animation: partnersMarqueeScroll 42s linear infinite;
 }
 
-/* Individual Slide Group with Uniform Gap (88px) & Right Offset for Gapless Loop */
+/* Individual Slide Group with Uniform Gap (72px) & Right Offset for Gapless Loop */
 .partners-slide {
   display: flex;
   align-items: center;
-  gap: 5.5rem; /* ~88px equal horizontal spacing */
-  padding-right: 5.5rem;
+  gap: 4.5rem; /* ~72px equal horizontal spacing */
+  padding-right: 4.5rem;
   flex-shrink: 0;
 }
 
-/* Vertical Stack Card: [Logo on top, partner name centered underneath with an 14px gap] */
+/* Vertical Stack Card: [Logo on top, partner name centered underneath with an 12px gap] */
 .partner-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px; /* 14px vertical gap */
+  gap: 12px; /* 12px vertical gap */
   flex-shrink: 0;
   text-decoration: none;
   cursor: default;
@@ -711,21 +711,21 @@ a {
 }
 
 .partner-logo-box {
-  height: 112px;
+  height: 84px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Partner Logo: Clearly Legible & Highly Visible (104px height) */
+/* Partner Logo: Clearly Legible & Highly Visible (76px height) */
 .partner-logo {
-  height: 104px;
-  max-height: 108px;
+  height: 76px;
+  max-height: 80px;
   width: auto;
-  max-width: 240px;
+  max-width: 190px;
   object-fit: contain;
   opacity: 1; /* 100% full visibility — clear and prominent */
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.12));
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.10));
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
               filter 0.25s ease;
   user-select: none;
@@ -735,9 +735,9 @@ a {
 /* Partner Name: Legible, Crisp Dark Tone */
 .partner-name {
   font-family: var(--font-family);
-  font-size: 1.15rem;
-  font-weight: 650;
-  letter-spacing: -0.015em;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--color-bg-dark); /* Crisp dark tone #080C14 from palette */
   text-align: center;
   white-space: nowrap;
@@ -751,12 +751,12 @@ a {
 }
 
 .partner-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 }
 
 .partner-card:hover .partner-logo {
   transform: scale(1.08);
-  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.18));
+  filter: drop-shadow(0 8px 22px rgba(0, 0, 0, 0.16));
 }
 
 .partner-card:hover .partner-name {
@@ -922,30 +922,30 @@ a {
 
   /* Responsive Partners Section for Tablets */
   .partners-section {
-    padding: 3.5rem 0 4rem 0;
+    padding: 3rem 0 3.5rem 0;
   }
 
   .partners-heading {
     font-size: clamp(1.85rem, 5vw, 2.35rem);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.25rem;
   }
 
   .partners-slide {
-    gap: 4.25rem;
-    padding-right: 4.25rem;
+    gap: 3.5rem;
+    padding-right: 3.5rem;
   }
 
   .partner-logo-box {
-    height: 92px;
+    height: 72px;
   }
 
   .partner-logo {
-    height: 84px;
-    max-height: 88px;
+    height: 64px;
+    max-height: 68px;
   }
 
   .partner-name {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
   }
 
   .partners-carousel::before,
@@ -954,7 +954,7 @@ a {
   }
 
   .partners-track {
-    animation-duration: 40s;
+    animation-duration: 36s;
   }
 }
 
@@ -1007,30 +1007,30 @@ a {
 
   /* Responsive Partners Section for Mobile Phones */
   .partners-section {
-    padding: 2.75rem 0 3.25rem 0;
+    padding: 2.5rem 0 3rem 0;
   }
 
   .partners-heading {
     font-size: clamp(1.65rem, 6.5vw, 2rem);
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
   }
 
   .partners-slide {
-    gap: 3.25rem;
-    padding-right: 3.25rem;
+    gap: 2.75rem;
+    padding-right: 2.75rem;
   }
 
   .partner-logo-box {
-    height: 76px;
+    height: 60px;
   }
 
   .partner-logo {
-    height: 70px;
-    max-height: 72px;
+    height: 52px;
+    max-height: 56px;
   }
 
   .partner-name {
-    font-size: 0.95rem;
+    font-size: 0.88rem;
   }
 
   .partners-carousel::before,
@@ -1039,7 +1039,7 @@ a {
   }
 
   .partners-track {
-    animation-duration: 34s;
+    animation-duration: 30s;
   }
 }
 

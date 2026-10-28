@@ -87,17 +87,17 @@ Directly beneath the hero, a continuous, auto-scrolling partner logo marquee hig
 - **Visual Presentation & Background**:
   - Background: Brand **Lemon Chiffon** (`var(--color-lemon-chiffon)` / `#FCF5C7`), providing a warm, bright, off-white/cream canvas.
   - Borderless: Completely devoid of divider lines, top/bottom borders, or box shadows for seamless page integration.
-  - Breathing Room: Comfortable vertical padding (`3.75rem 0 4.25rem 0` / ~60px-68px).
+  - Breathing Room: Comfortable vertical padding (`4.5rem 0 5rem 0` / ~72px-80px).
   - Section Header: **`Our Partners.`** styled in `var(--font-family)` (Inter Tight) with ExtraBold `850` weight and tight `-0.04em` letter-spacing matching the reference studio headline, in crisp `#080C14` dark charcoal.
 - **Card Layout & Logo Sizing**:
-  - Item Structure: Vertical stack card (`.partner-card`) with logo on top and partner name centered directly underneath with a 12px gap.
-  - Logo Sizing: High-visibility legibility at **`76px`** height (`64px` on tablet, `52px` on mobile), `width: auto; object-fit: contain`.
-  - Fidelity: 100% full opacity and vivid color fidelity with subtle depth (`drop-shadow(0 3px 10px rgba(0, 0, 0, 0.10))`), elevating on hover with scale `1.08`.
-  - Partner Name: Clean typography (`font-weight: 600`, `letter-spacing: -0.01em`, crisp `#080C14` charcoal).
+  - Item Structure: Vertical stack card (`.partner-card`) with logo on top and partner name centered directly underneath with a 14px gap.
+  - Logo Sizing: Ultra-prominent visibility at **`104px`** height (`84px` on tablet, `70px` on mobile), `width: auto; object-fit: contain`.
+  - Fidelity: 100% full opacity and vivid color fidelity with subtle depth (`drop-shadow(0 4px 14px rgba(0, 0, 0, 0.12))`), elevating on hover with scale `1.08`.
+  - Partner Name: Clean typography (`font-size: 1.15rem; font-weight: 650`, `letter-spacing: -0.015em`, crisp `#080C14` charcoal).
 - **Marquee Mechanics**:
-  - Infinite gapless linear translation using `@keyframes partnersMarqueeScroll` translating from `translateX(0)` to `translateX(-50%)` over `42s`.
+  - Infinite gapless linear translation using `@keyframes partnersMarqueeScroll` translating from `translateX(0)` to `translateX(-50%)` over `48s`.
   - Quadruple slide sets ensuring wide and 4K displays maintain a full continuous ribbon with zero gaps or hitches.
-  - Generous card spacing: `4.5rem` (~72px) between cards.
+  - Generous card spacing: `5.5rem` (~88px) between cards.
   - Pause on hover: `animation-play-state: paused` on `.partners-carousel:hover` and `.partners-track:hover`.
   - Edge fade masks: CSS `mask-image` gradient combined with fallback gradient overlays in `var(--color-lemon-chiffon)` for smooth fade-in / fade-out at viewport edges.
   - Accessibility: First set is fully exposed to screen readers with descriptive `alt` tags and `title` tooltips; duplicates marked `aria-hidden="true"`; `prefers-reduced-motion` provides smooth manual horizontal scrolling.
