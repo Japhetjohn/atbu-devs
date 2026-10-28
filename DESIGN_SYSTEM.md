@@ -123,31 +123,57 @@ Directly continuing from the Partners carousel, the About Us section maintains a
 
 ---
 
-## 7. "Membership" Section Architecture (Article III Driven • High-Contrast Showcase)
+## 7. "Membership & Community" Section Architecture (Alternating Story Blocks • Reference-Inspired)
 
-Directly beneath the About Us section, a high-contrast dark section establishes immediate authority and focus:
-- **Visual Contrast & Palette**:
-  - Base: Deep Charcoal / Royal Navy background (`#080C14`) accented with subtle ambient radial gradients in Light Blue (`rgba(160, 206, 217, 0.05)`) and Celadon (`rgba(173, 247, 182, 0.06)`).
-  - Spacing: Generous breathing space (`padding: 6rem 0 6.5rem 0` / ~96px–104px vertical padding) within a constrained `1200px` container.
+Directly beneath the About Us section, the Membership & Community section establishes a clean, spacious, editorial storytelling flow across two alternating blocks:
+- **Visual Presentation & Palette**:
+  - Background: Complementary solid brand tone from the official palette — **Light Gold** (`var(--color-light-gold)` / `#FFEE93`), creating a warm, distinct chapter shift from the Lemon Chiffon above.
+  - Borderless & Airy: Zero divider lines, zero borders, zero box shadows on the section container with generous vertical breathing space (`padding: 6.5rem 0 7.5rem 0` / ~104px–120px).
+  - Strict Rules: Strictly NO cards, NO boxes, NO frosted glass containers, NO bordered tiles, NO emojis, and NO markdown horizontal dividers (`---`).
 - **Section Introduction**:
-  - Eyebrow: `MEMBERSHIP • ARTICLE III` in uppercase bold Celadon (`#ADF7B6`, `font-size: 0.85rem`, `letter-spacing: 0.12em`).
-  - Section Headline: `"Open to every student builder. Driven by excellence."` (`font-weight: 350`, `color: #FFFFFF`, `line-height: 1.15`).
-  - Subtitle: `"Registration is open to all registered students of Abubakar Tafawa Balewa University across every department and level."` (`color: rgba(255, 255, 255, 0.72)`).
-- **2-Column Showcase**:
-  - Left Column (Asset Frame):
-    - Photo: `partners/membership.jpg` (official members assembly).
-    - Card Frame: `rounded-2xl` border (`border: 1px solid rgba(255, 255, 255, 0.1)`), deep drop shadow (`0 25px 60px -15px rgba(0, 0, 0, 0.75)`), ambient hover glow (`0 0 50px rgba(173, 247, 182, 0.14)`), and smooth hover scale (`1.02`).
-    - Floating Badge: Frosted glass badge at the bottom of the photo displaying `"General Assembly • Community Members"`.
-  - Right Column (Pillars & Rights Cards):
-    - 3 semi-transparent frosted cards (`bg-white/5 border border-white/10 p-5 rounded-xl`):
-      1. **Universal Access (Section 1):** Open to all students without barriers—from first-time coders to advanced engineers.
-      2. **Builder Rights (Section 5):** Direct access to technical bootcamps, hackathons, open-source teams, and mentorship pipelines.
-      3. **Digital Credentials (Section 8):** Official Club ID, verified digital credentials, and a unique Membership Identification Number.
-    - Hover Interaction: Dynamic cursor-following gradient sheen and Celadon border highlight (`border-color: rgba(173, 247, 182, 0.45)`).
-    - Section CTA: `"Join ATBUDEVS Today →"` in Celadon (`#ADF7B6`), dark text (`#06130B`), and signature tactile shadow.
-- **Animation**:
-  - Staggered scroll-reveal animation with Intersection Observer.
-  - Interactive cursor hover sheen across membership cards.
+  - Headline: **`Membership & Community`** centered at the top in `var(--font-family)` (Inter Tight) with bold weight (`font-weight: 850; letter-spacing: -0.04em`), matching the reference studio headline typography in crisp `#080C14` dark charcoal.
+- **Alternating 2-Column Story Blocks**:
+  - **Block 1 — Student Membership (Image Left, Content Right)**:
+    - Left Column: Clean real photo display (`partners/tech-community-1.jpg` / student builders assembly) with rounded corners (`border-radius: 1.5rem`), natural subtle depth, and zero card shell wrappers.
+    - Right Column: Title `"Student Membership"`, narrative paragraph on universal access across all faculties/departments with verified credentials, and signature pill button `"Join the Club →"` in Celadon (`#ADF7B6`) with offset retro drop shadow (`2px 2px 0px #06130b`).
+  - **Organic Dotted / Dashed Path Connector (Mid)**:
+    - Subtle curved SVG dashed line (`stroke-dasharray="6 8"`, `stroke-width="2.5"`) organically meandering downward and across from Block 1 to Block 2, naturally guiding the eye.
+  - **Block 2 — Active Developer Community (Content Left, Image Right)**:
+    - Left Column: Title `"Active Developer Community"`, narrative paragraph on specialized tracks, collaborative open-source projects, and university hackathons, with signature pill button `"Explore Community →"`.
+    - Right Column: Clean real photo display (`partners/tech-community-2.jpg` / active tech community) matching Block 1's rounded aesthetic.
+  - **Organic Dotted / Dashed Path Connector (Bottom)**:
+    - Continuation of the subtle curved dashed trail exiting the bottom of Block 2 toward the center.
+- **Mobile Responsiveness (`< 768px`)**:
+  - Transitions into a single-column stack with Block 2's image ordered on top (`order: -1`) to maintain a consistent `[Image → Title → Paragraph → Button]` reading hierarchy throughout.
+  - Decorative SVG dotted connectors hidden on mobile (`display: none;`) to eliminate clutter and layout shift.
+
+---
+
+## 8. "Meet the Founder" Section Architecture (Reference-Inspired Layout)
+
+Directly beneath the Membership & Community section, a bright, modern editorial showcase highlights club founder Sen. Muhammad Shehu Danbinta:
+- **Visual Presentation & Background**:
+  - Background: Brand **Lemon Chiffon** (`var(--color-lemon-chiffon)` / `#FCF5C7`) overlaid with a faint geometric checkered grid pattern (`linear-gradient` lines 32px x 32px in `rgba(8, 12, 20, 0.04)`), matching the reference layout.
+  - Clean Spacing: Generous padding (`6.5rem 0 7.5rem 0` on desktop, `3.5rem 0 4rem 0` on mobile).
+  - Strict Rules: No emojis anywhere in the text, no bordered card tiles enclosing the section, and no markdown divider lines (`---`).
+- **Section Header (Bold Two-Tone)**:
+  - Line 1: **"The"** in solid dark charcoal (`#080C14`, `font-weight: 850; letter-spacing: -0.04em`).
+  - Line 2: **"Founder"** in brand accent **Peach Glow** (`#FFC09F`) with subtle drop shadow for crisp definition.
+  - Desktop: Left-aligned above the polaroid card. Mobile: Centered.
+- **2-Column Responsive Layout**:
+  - **Left Column (Founder Visual — Polaroid Card)**:
+    - Photo: `partners/founder.jpg` (official portrait of Sen. Muhammad Shehu Danbinta).
+    - Polaroid Styling: Pure white frame (`bg-white p-3.5 rounded-2xl shadow-xl`), rotated `-2.5deg` on desktop (`rotate-0` on hover with smooth cubic-bezier transition).
+    - Decorative Detail: Glossy red 3D push-pin graphic positioned on the top corner.
+  - **Right Column (Biography & Profile Details)**:
+    - Narrative Bio: First-person constitution-aligned statement on bridging academic theory with production software and building a collaborative student ecosystem.
+    - Profile: **`Sen. Muhammad Shehu Danbinta`** in bold 750 weight with **`Founder, ATBU Developers Club`** subtitle.
+    - Signature CTA Pill: **`Connect with the Founder →`** in Celadon (`#ADF7B6`), dark text (`#06130B`), and offset drop shadow (`2px 2px 0px #06130b`).
+- **Mobile View Responsiveness (`< 768px`)**:
+  - Hierarchy: `[The Founder Header] → [Polaroid Image Centered] → [Bio Narrative] → [Name & Title] → [Connect CTA]`.
+  - Full-width touch-friendly hit targets (`min-height: 46px`).
+
+
 
 
 

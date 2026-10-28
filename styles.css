@@ -606,11 +606,12 @@ a {
   padding: 3.75rem 0 4.25rem 0; /* py-15 / ~60px-68px vertical breathing room */
   width: 100%;
   max-width: 100vw;
+  min-height: 80px; /* guarantees space is reserved before images load */
   overflow: hidden;
   border: none; /* Completely remove any horizontal separator lines or borders */
   box-shadow: none;
   z-index: 10;
-  contain: paint;
+  contain: paint layout;
 }
 
 .partners-container {
@@ -641,9 +642,10 @@ a {
 .partners-carousel {
   position: relative;
   width: 100%;
+  min-height: 80px;
   overflow: hidden;
   padding: 0.75rem 0;
-  contain: layout paint;
+  contain: paint layout;
   
   /* Modern CSS gradient fade mask matching section background */
   -webkit-mask-image: linear-gradient(
@@ -1149,6 +1151,212 @@ a {
   display: block;
 }
 
+/* --------------------------------------------------------------------------
+   MEET THE FOUNDER SECTION (Reference-Inspired Layout • Two-Tone & Polaroid)
+   Bright Cream Canvas with Subtle Grid Pattern, Polaroid Card & Bio Narrative
+   -------------------------------------------------------------------------- */
+.founder-section {
+  position: relative;
+  background-color: var(--color-lemon-chiffon); /* Bright off-white/cream palette tone #FCF5C7 */
+  background-image: 
+    linear-gradient(to right, rgba(8, 12, 20, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(8, 12, 20, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px; /* Clean, subtle checkered grid matching reference */
+  padding: 6.5rem 0 7.5rem 0; /* py-26 generous breathing space */
+  width: 100%;
+  overflow: hidden;
+  border: none;
+  box-shadow: none;
+  z-index: 10;
+}
+
+.founder-container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+/* Section Header (Bold Two-Tone) */
+.founder-header {
+  margin-bottom: 3.5rem;
+  text-align: left;
+}
+
+.founder-heading {
+  font-family: var(--font-family);
+  font-size: clamp(3.25rem, 7.5vw, 5.25rem);
+  font-weight: 850;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.founder-heading-line1 {
+  display: block;
+  color: var(--color-bg-dark); /* Crisp dark tone #080C14 */
+}
+
+.founder-heading-line2 {
+  display: block;
+  color: var(--color-peach-glow); /* Brand accent tone #FFC09F */
+  text-shadow: 0 1px 2px rgba(8, 12, 20, 0.20); /* Crisp edge definition on Lemon Chiffon */
+}
+
+/* 2-Column Grid (Mobile Stack, Desktop Split) */
+.founder-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+/* Left Column: Visual Asset (Polaroid Card) */
+.founder-visual-col {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.founder-polaroid-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+/* Decorative Pin Graphic (Top Corner) */
+.founder-pin {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  width: 28px;
+  height: 28px;
+  z-index: 10;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.32));
+}
+
+.founder-polaroid-card {
+  position: relative;
+  background: #FFFFFF;
+  padding: 0.9rem;
+  border-radius: 1rem;
+  box-shadow: 0 22px 45px -12px rgba(8, 12, 20, 0.18), 0 0 1px rgba(8, 12, 20, 0.12);
+  transform: rotate(-2.5deg);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease;
+  max-width: 310px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .founder-polaroid-card:hover {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 0 28px 55px -10px rgba(8, 12, 20, 0.24);
+  }
+}
+
+.founder-polaroid-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: 0.65rem;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Right Column: Bio Narrative, Name & Role, Signature CTA */
+.founder-content-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.founder-bio {
+  font-family: var(--font-family);
+  font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+  font-weight: 450;
+  line-height: 1.72;
+  letter-spacing: -0.01em;
+  color: #1f2937;
+  max-width: 560px;
+  margin: 0 0 2.25rem 0;
+}
+
+.founder-profile {
+  margin-bottom: 2.25rem;
+}
+
+.founder-name {
+  font-family: var(--font-family);
+  font-size: 1.25rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  color: var(--color-bg-dark);
+  margin: 0 0 0.35rem 0;
+}
+
+.founder-title {
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #4a5568;
+  margin: 0;
+}
+
+.founder-action {
+  margin-top: 0.25rem;
+}
+
+/* Signature Pill Button */
+.founder-cta-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: var(--color-primary-cta); /* Celadon #ADF7B6 */
+  color: var(--color-primary-cta-text); /* #06130B */
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  padding: 0.72rem 1.75rem;
+  min-height: 46px; /* Touch-friendly hit target */
+  box-sizing: border-box;
+  border-radius: 9999px;
+  text-decoration: none;
+  border: 1.5px solid #06130b;
+  box-shadow: 2px 2px 0px #06130b;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.founder-cta-pill:hover {
+  background-color: var(--color-light-gold); /* Light Gold #FFEE93 */
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px #06130b;
+}
+
+.founder-cta-pill:hover .founder-cta-arrow {
+  transform: translateX(4px);
+}
+
+.founder-cta-pill:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #06130b;
+}
+
+.founder-cta-arrow {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 /* Scroll-Reveal Animation States */
 [data-scroll-reveal] {
   opacity: 0;
@@ -1461,6 +1669,69 @@ a {
   .story-connector-wrap {
     display: none;
   }
+
+  /* Responsive Founder Section (< 768px) */
+  .founder-section {
+    padding: 3.5rem 0 4rem 0;
+  }
+
+  .founder-container {
+    padding: 0 1.25rem;
+  }
+
+  .founder-header {
+    text-align: center;
+    margin-bottom: 2.25rem;
+  }
+
+  .founder-heading {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+
+  .founder-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .founder-visual-col {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .founder-polaroid-card {
+    max-width: 270px;
+    transform: rotate(-1.5deg);
+  }
+
+  .founder-content-col {
+    align-items: center;
+    text-align: center;
+  }
+
+  .founder-bio {
+    font-size: 1rem;
+    line-height: 1.62;
+    text-align: center;
+    margin-bottom: 1.75rem;
+    max-width: 100%;
+  }
+
+  .founder-profile {
+    text-align: center;
+    margin-bottom: 1.75rem;
+  }
+
+  .founder-action {
+    width: 100%;
+  }
+
+  .founder-cta-pill {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1620,6 +1891,23 @@ a {
   }
 
   .story-cta-pill {
+    max-width: 100%;
+  }
+
+  /* Narrow Mobile Phones Founder Section (<= 480px) */
+  .founder-section {
+    padding: 3rem 0 3.75rem 0;
+  }
+
+  .founder-heading {
+    font-size: clamp(2.25rem, 8.5vw, 2.85rem);
+  }
+
+  .founder-polaroid-card {
+    max-width: 240px;
+  }
+
+  .founder-cta-pill {
     max-width: 100%;
   }
 }
