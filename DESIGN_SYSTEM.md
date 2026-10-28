@@ -72,27 +72,33 @@ Following the modern editorial studio reference:
 
 ---
 
-## 5. "Powered by" Partner Section & Infinite Marquee Carousel
+## 5. "Our Partners" Section & Infinite Marquee Carousel (Light & Airy Layout)
 
-Directly beneath the hero, a continuous, auto-scrolling partner logo marquee highlights official collaborations with student associations across Abubakar Tafawa Balewa University:
+Directly beneath the hero, a continuous, auto-scrolling partner logo marquee highlights official collaborations with student associations across Abubakar Tafawa Balewa University, styled in a bright, clean, airy layout:
 - **Affiliated Student Bodies**:
   - Nigeria Association of Computing Students (NACOS)
   - Nigerian Universities Engineering Students Association (NUESA)
   - National Association of Science Students (NASS)
-  - National Association of University Students Bauchi CMC (NAUS)
+  - National Association of University Students Bauchi CMC (NAUS CMC)
   - Association of Environmental Technology Students (AETS)
   - Association of Management Sciences Students (AMSS)
   - Science and Technology Education Students Association (STESA)
-  - Students Representative Assembly ATBU (SRA)
-- **Visual Presentation**:
-  - Centered label: `POWERED BY` styled in `var(--font-family)`, uppercase, letter-spacing `0.12em`, `var(--color-text-subtle)`.
-  - Transparent PNGs with tightly cropped bounding boxes for optical height balance across circular/shield emblems.
-  - Consistent optical height: `38px` (desktop), `32px` (tablet), `28px` (mobile) with `width: auto; object-fit: contain`.
-  - Opacity: `0.75` default with transition to `1.0` and gentle scale on hover.
+  - Students Representative Assembly ATBU (SRA ATBU)
+- **Visual Presentation & Background**:
+  - Background: Brand **Lemon Chiffon** (`var(--color-lemon-chiffon)` / `#FCF5C7`), providing a warm, bright, off-white/cream canvas.
+  - Borderless: Completely devoid of divider lines, top/bottom borders, or box shadows for seamless page integration.
+  - Breathing Room: Comfortable vertical padding (`3.75rem 0 4.25rem 0` / ~60px-68px).
+  - Section Header: **`Our Partners.`** styled in `var(--font-family)` (Inter Tight) with ExtraBold `850` weight and tight `-0.04em` letter-spacing matching the reference studio headline, in crisp `#080C14` dark charcoal.
+- **Card Layout & Logo Sizing**:
+  - Item Structure: Vertical stack card (`.partner-card`) with logo on top and partner name centered directly underneath with a 12px gap.
+  - Logo Sizing: High-visibility legibility at **`76px`** height (`64px` on tablet, `52px` on mobile), `width: auto; object-fit: contain`.
+  - Fidelity: 100% full opacity and vivid color fidelity with subtle depth (`drop-shadow(0 3px 10px rgba(0, 0, 0, 0.10))`), elevating on hover with scale `1.08`.
+  - Partner Name: Clean typography (`font-weight: 600`, `letter-spacing: -0.01em`, crisp `#080C14` charcoal).
 - **Marquee Mechanics**:
-  - Infinite gapless linear translation using `@keyframes partnersMarqueeScroll` translating from `translateX(0)` to `translateX(-50%)`.
+  - Infinite gapless linear translation using `@keyframes partnersMarqueeScroll` translating from `translateX(0)` to `translateX(-50%)` over `42s`.
   - Quadruple slide sets ensuring wide and 4K displays maintain a full continuous ribbon with zero gaps or hitches.
-  - Pause on hover: `animation-play-state: paused` on `.partners-carousel:hover`.
-  - Double edge fade: CSS `mask-image` gradient combined with fallback subtle gradient overlays in `var(--color-bg-dark)` for smooth fade-in / fade-out at viewport edges.
-  - Accessibility: First set is fully exposed to screen readers with descriptive `alt` tags; duplicates marked `aria-hidden="true"`; `prefers-reduced-motion` pauses the marquee and provides smooth manual horizontal scrolling.
+  - Generous card spacing: `4.5rem` (~72px) between cards.
+  - Pause on hover: `animation-play-state: paused` on `.partners-carousel:hover` and `.partners-track:hover`.
+  - Edge fade masks: CSS `mask-image` gradient combined with fallback gradient overlays in `var(--color-lemon-chiffon)` for smooth fade-in / fade-out at viewport edges.
+  - Accessibility: First set is fully exposed to screen readers with descriptive `alt` tags and `title` tooltips; duplicates marked `aria-hidden="true"`; `prefers-reduced-motion` provides smooth manual horizontal scrolling.
 

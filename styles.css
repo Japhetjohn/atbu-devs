@@ -598,15 +598,16 @@ a {
 
 /* --------------------------------------------------------------------------
    PARTNERS / POWERED BY SECTION & CONTINUOUS MARQUEE CAROUSEL
+   Light, Airy & Clean Layout (Lemon Chiffon Palette Off-White/Cream)
    -------------------------------------------------------------------------- */
 .partners-section {
   position: relative;
-  background-color: var(--color-bg-dark);
-  padding: 3.25rem 0 3.75rem 0;
+  background-color: var(--color-lemon-chiffon);
+  padding: 4.5rem 0 5rem 0; /* Generous vertical breathing room for larger crests */
   width: 100%;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border: none; /* Completely remove any horizontal separator lines or borders */
+  box-shadow: none;
   z-index: 10;
 }
 
@@ -620,16 +621,16 @@ a {
   align-items: center;
 }
 
-/* Centered Label Above Carousel */
-.partners-label {
+/* Section Heading: Replicating Reference Design Typography (Inter Tight, 850 Weight, -0.04em tracking) */
+.partners-heading {
   font-family: var(--font-family);
-  font-size: 0.825rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-text-subtle);
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  font-weight: 850; /* ExtraBold, matching 'Grow as a developer' typography */
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  color: var(--color-bg-dark); /* Crisp dark tone #080C14 on Lemon Chiffon */
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3.25rem;
   user-select: none;
 }
 
@@ -638,45 +639,45 @@ a {
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 0.5rem 0;
+  padding: 0.75rem 0;
   
-  /* Modern CSS gradient fade mask */
+  /* Modern CSS gradient fade mask matching section background */
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 8%,
-    black 92%,
+    black 7%,
+    black 93%,
     transparent 100%
   );
   mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 8%,
-    black 92%,
+    black 7%,
+    black 93%,
     transparent 100%
   );
 }
 
-/* Fallback / Reinforcing Edge Fade Overlays */
+/* Fallback / Reinforcing Edge Fade Overlays in Lemon Chiffon */
 .partners-carousel::before,
 .partners-carousel::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 90px;
+  width: 100px;
   z-index: 3;
   pointer-events: none;
 }
 
 .partners-carousel::before {
   left: 0;
-  background: linear-gradient(to right, var(--color-bg-dark) 0%, rgba(8, 12, 20, 0) 100%);
+  background: linear-gradient(to right, var(--color-lemon-chiffon) 0%, rgba(252, 245, 199, 0) 100%);
 }
 
 .partners-carousel::after {
   right: 0;
-  background: linear-gradient(to left, var(--color-bg-dark) 0%, rgba(8, 12, 20, 0) 100%);
+  background: linear-gradient(to left, var(--color-lemon-chiffon) 0%, rgba(252, 245, 199, 0) 100%);
 }
 
 /* Continuous Marquee Track */
@@ -684,43 +685,82 @@ a {
   display: flex;
   width: max-content;
   will-change: transform;
-  animation: partnersMarqueeScroll 38s linear infinite;
+  animation: partnersMarqueeScroll 48s linear infinite;
 }
 
-/* Individual Slide Group with Uniform Gap & Right Offset for Gapless Loop */
+/* Individual Slide Group with Uniform Gap (88px) & Right Offset for Gapless Loop */
 .partners-slide {
   display: flex;
   align-items: center;
-  gap: 3.5rem;
-  padding-right: 3.5rem;
+  gap: 5.5rem; /* ~88px equal horizontal spacing */
+  padding-right: 5.5rem;
   flex-shrink: 0;
 }
 
-/* Partner Logo Elements */
-.partner-logo {
-  height: 38px;
-  max-height: 38px;
-  width: auto;
-  max-width: 120px;
-  object-fit: contain;
-  opacity: 0.75;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
-  transition: opacity 0.25s ease, filter 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+/* Vertical Stack Card: [Logo on top, partner name centered underneath with an 14px gap] */
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px; /* 14px vertical gap */
   flex-shrink: 0;
+  text-decoration: none;
+  cursor: default;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.partner-logo-box {
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Partner Logo: Clearly Legible & Highly Visible (104px height) */
+.partner-logo {
+  height: 104px;
+  max-height: 108px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  opacity: 1; /* 100% full visibility — clear and prominent */
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.12));
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.25s ease;
   user-select: none;
   -webkit-user-drag: none;
 }
 
-/* Hover Interactivity: Pause Marquee & Highlight Logo */
+/* Partner Name: Legible, Crisp Dark Tone */
+.partner-name {
+  font-family: var(--font-family);
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  color: var(--color-bg-dark); /* Crisp dark tone #080C14 from palette */
+  text-align: center;
+  white-space: nowrap;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover Interactivity: Pause Marquee, Elevate Logo & Enhance Shadow */
 .partners-carousel:hover .partners-track,
 .partners-track:hover {
   animation-play-state: paused;
 }
 
-.partner-logo:hover {
-  opacity: 1;
-  transform: translateY(-2px) scale(1.06);
-  filter: drop-shadow(0 4px 14px rgba(173, 247, 182, 0.35));
+.partner-card:hover {
+  transform: translateY(-4px);
+}
+
+.partner-card:hover .partner-logo {
+  transform: scale(1.08);
+  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.18));
+}
+
+.partner-card:hover .partner-name {
+  color: #000000;
 }
 
 /* Linear Infinite Translation */
@@ -882,32 +922,39 @@ a {
 
   /* Responsive Partners Section for Tablets */
   .partners-section {
-    padding: 2.25rem 0 2.75rem 0;
+    padding: 3.5rem 0 4rem 0;
   }
 
-  .partners-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 1.5rem;
+  .partners-heading {
+    font-size: clamp(1.85rem, 5vw, 2.35rem);
+    margin-bottom: 2.5rem;
   }
 
   .partners-slide {
-    gap: 2.5rem;
-    padding-right: 2.5rem;
+    gap: 4.25rem;
+    padding-right: 4.25rem;
+  }
+
+  .partner-logo-box {
+    height: 92px;
   }
 
   .partner-logo {
-    height: 32px;
-    max-height: 32px;
+    height: 84px;
+    max-height: 88px;
+  }
+
+  .partner-name {
+    font-size: 1.05rem;
   }
 
   .partners-carousel::before,
   .partners-carousel::after {
-    width: 45px;
+    width: 60px;
   }
 
   .partners-track {
-    animation-duration: 28s;
+    animation-duration: 40s;
   }
 }
 
@@ -960,32 +1007,39 @@ a {
 
   /* Responsive Partners Section for Mobile Phones */
   .partners-section {
-    padding: 1.75rem 0 2.25rem 0;
+    padding: 2.75rem 0 3.25rem 0;
   }
 
-  .partners-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.09em;
-    margin-bottom: 1.25rem;
+  .partners-heading {
+    font-size: clamp(1.65rem, 6.5vw, 2rem);
+    margin-bottom: 2rem;
   }
 
   .partners-slide {
-    gap: 2rem;
-    padding-right: 2rem;
+    gap: 3.25rem;
+    padding-right: 3.25rem;
+  }
+
+  .partner-logo-box {
+    height: 76px;
   }
 
   .partner-logo {
-    height: 28px;
-    max-height: 28px;
+    height: 70px;
+    max-height: 72px;
+  }
+
+  .partner-name {
+    font-size: 0.95rem;
   }
 
   .partners-carousel::before,
   .partners-carousel::after {
-    width: 30px;
+    width: 40px;
   }
 
   .partners-track {
-    animation-duration: 24s;
+    animation-duration: 34s;
   }
 }
 
