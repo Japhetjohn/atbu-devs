@@ -187,31 +187,34 @@ Directly following the Meet the Founder block, an editorial interactive slidesho
   - Main Headline (Slim Hero Font Style): `"Hands-on programs engineered for continuous growth."` in `var(--font-family)`, `font-weight: 350; letter-spacing: -0.035em; color: var(--color-bg-dark)`.
   - Subtitle: `"From semester-long bootcamps to our flagship summit, our calendar is built around practical engineering, teamwork, and real-world deployment."`
 - **4 Official Program Slides (Constitution Schedule VIII & XIV)**:
-  1. **The Developers Summit & Hackathon** (ANNUAL FLAGSHIP):
-     - Description: Landmark gathering uniting student innovators, industry leaders, and alumni in multi-day competitive hackathons.
-     - Focus Tags: Technical Keynotes, Product Demos, Competitive Hackathons.
-     - Asset: `partners/slide-summit.jpg`.
+  1. **The Developers Summit & Hackathons** (ANNUAL FLAGSHIP):
+     - Description: An energetic gathering uniting student innovators and mentors. Teams build and pitch functional prototypes during intensive multi-day hackathons addressing campus and community needs.
+     - Focus Tags: Live Coding Sprints, Technical Demos, Team Mentorship.
+     - Visual Asset: `partners/hackathon-github-removebg-preview.png` (transparent background GitHub hackathon collaboration mark seamlessly blending on Lemon Chiffon). No device frames or card shells.
   2. **Intensive Web, Mobile & AI Bootcamps** (SEMESTER 1 TECHNICAL TRACKS):
      - Description: Structured, mentor-led engineering tracks covering web stacks, cross-platform mobile apps, and machine learning pipelines.
      - Focus Tags: Full-Stack Web, Mobile Engineering, Practical AI/ML.
-     - Asset: `partners/slide-bootcamps.jpg`.
-  3. **Cybersecurity CTFs & UI/UX Design Challenges** (SPECIALIZED SESSIONS):
-     - Description: Interactive security workshops featuring Capture-The-Flag challenges alongside human-centered product design sprints.
+     - Asset: `partners/bootcamp-removebg-preview.png` (transparent background illustration seamlessly blending on Lemon Chiffon).
+  3. **Cybersecurity CTFs & UI/UX Sprints** (SPECIALIZED SESSIONS):
+     - Description: Interactive security workshops featuring Capture-The-Flag challenges alongside human-centered product design sprints that refine digital products from concept to interface.
      - Focus Tags: Ethical Hacking, Interface Design, Security Audits.
-     - Asset: `partners/slide-cybersecurity.jpg`.
-  4. **Open Source Week & Digital Literacy Outreach** (COMMUNITY & IMPACT):
-     - Description: Dedicated community sessions focused on public repo contributions, paired code reviews, and community digital literacy outreach.
+     - Asset: `partners/cyber-security-removebg-preview.png` (transparent background illustration seamlessly blending on Lemon Chiffon).
+  4. **Open Source Week & Tech Outreach** (COMMUNITY & IMPACT):
+     - Description: Dedicated community sessions focused on public repo contributions, paired code reviews, and community tech outreaches bringing digital skills to the wider community.
      - Focus Tags: Git Collaboration, Open Source Contributions, Community Impact.
-     - Asset: `partners/slide-opensource.jpg`.
+     - Asset: `partners/bootcamp-removebg-preview.png` (transparent background illustration seamlessly blending on Lemon Chiffon).
 - **Interactive Controls & Mechanics**:
   - Chevron buttons (left/right) with offset retro shadow and hover state (`var(--color-celadon)`).
   - Quiet pagination dots with elongated pill indicator for active slide.
   - Touch-friendly swipe gestures on mobile devices (`touchstart`, `touchend`).
   - Keyboard arrow navigation when focused (`ArrowLeft`, `ArrowRight`).
-  - Auto-advance (6.5s) paused during cursor hover.
-- **Mobile Responsiveness (`< 768px`)**:
-  - Converts from 50/50 2-column desktop grid to single column with visual asset displayed on top (`order: -1`).
-  - Generous touch targets and clean legible typography.
+  - Auto-advance (6.5s) paused during cursor hover and synchronized video playback.
+- **Mobile Responsiveness & Overflow Prevention (`< 768px`)**:
+  - `width: 100%; max-width: 100vw; overflow-x: hidden;` prevents horizontal flex leaks and layout blowout.
+  - `min-width: 0;` applied on all content/visual containers ensuring long words wrap without forcing horizontal scrollbars.
+  - Dynamic `min-height: auto;` eliminating fixed height clipping.
+  - Converts from 50/50 2-column desktop grid to single column with media (video/image) pinned cleanly on top (`order: -1`).
+  - Generous touch targets (`>= 44px`) and clean legible typography.
 
 
 

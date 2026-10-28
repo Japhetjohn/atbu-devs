@@ -610,20 +610,20 @@
       <div class="activities-carousel" id="activities-carousel" aria-roledescription="carousel" aria-label="Club Activities" tabindex="0">
         <div class="activities-track" id="activities-track">
 
-          <!-- Slide 1: Summit & Hackathon -->
-          <div class="activity-slide is-active" data-slide="0" aria-roledescription="slide" aria-label="1 of 4: The Developers Summit &amp; Hackathon">
+          <!-- Slide 1: Annual Developers Summit & Hackathons -->
+          <div class="activity-slide is-active" data-slide="0" aria-roledescription="slide" aria-label="1 of 4: The Developers Summit &amp; Hackathons">
             <div class="slide-content-col">
               <span class="slide-category">ANNUAL FLAGSHIP</span>
-              <h3 class="slide-title">The Developers Summit &amp; Hackathon</h3>
-              <p class="slide-desc">Our landmark gathering uniting student innovators, industry leaders, and alumni. Teams collaborate in intense multi-day hackathons to architect solutions for campus and community challenges.</p>
+              <h3 class="slide-title">The Developers Summit &amp; Hackathons</h3>
+              <p class="slide-desc">An energetic gathering uniting student innovators and mentors. Teams build and pitch functional prototypes during intensive multi-day hackathons addressing campus and community needs.</p>
               <div class="slide-focus-group">
-                <span class="slide-focus-pill">Technical Keynotes</span>
-                <span class="slide-focus-pill">Product Demos</span>
-                <span class="slide-focus-pill">Competitive Hackathons</span>
+                <span class="slide-focus-pill">Live Coding Sprints</span>
+                <span class="slide-focus-pill">Technical Demos</span>
+                <span class="slide-focus-pill">Team Mentorship</span>
               </div>
             </div>
             <div class="slide-visual-col">
-              <img src="partners/slide-summit.jpg" alt="ATBU Developers Summit and Hackathon gathering" class="slide-image" loading="lazy" />
+              <img src="partners/hackathon-github-removebg-preview.png" alt="GitHub and hackathon collaboration mark" class="slide-illustration" />
             </div>
           </div>
 
@@ -640,15 +640,15 @@
               </div>
             </div>
             <div class="slide-visual-col">
-              <img src="partners/slide-bootcamps.jpg" alt="Student developers participating in technical bootcamps" class="slide-image" loading="lazy" />
+              <img src="partners/bootcamp-removebg-preview.png" alt="Student developers participating in technical bootcamps" class="slide-illustration" loading="lazy" />
             </div>
           </div>
 
-          <!-- Slide 3: Cybersecurity & Design -->
-          <div class="activity-slide" data-slide="2" aria-roledescription="slide" aria-label="3 of 4: Cybersecurity CTFs &amp; UI/UX Design Challenges">
+          <!-- Slide 3: Cybersecurity CTFs & UI/UX Sprints -->
+          <div class="activity-slide" data-slide="2" aria-roledescription="slide" aria-label="3 of 4: Cybersecurity CTFs &amp; UI/UX Sprints">
             <div class="slide-content-col">
               <span class="slide-category">SPECIALIZED SESSIONS</span>
-              <h3 class="slide-title">Cybersecurity CTFs &amp; UI/UX Design Challenges</h3>
+              <h3 class="slide-title">Cybersecurity CTFs &amp; UI/UX Sprints</h3>
               <p class="slide-desc">Interactive security workshops featuring Capture-The-Flag challenges alongside human-centered product design sprints that refine digital products from concept to interface.</p>
               <div class="slide-focus-group">
                 <span class="slide-focus-pill">Ethical Hacking</span>
@@ -657,15 +657,15 @@
               </div>
             </div>
             <div class="slide-visual-col">
-              <img src="partners/slide-cybersecurity.jpg" alt="Developer coding during security CTF challenge" class="slide-image" loading="lazy" />
+              <img src="partners/cyber-security-removebg-preview.png" alt="Cybersecurity and interface design challenge illustration" class="slide-illustration" loading="lazy" />
             </div>
           </div>
 
-          <!-- Slide 4: Open Source & Outreach -->
-          <div class="activity-slide" data-slide="3" aria-roledescription="slide" aria-label="4 of 4: Open Source Week &amp; Digital Literacy Outreach">
+          <!-- Slide 4: Open Source Week & Tech Outreach -->
+          <div class="activity-slide" data-slide="3" aria-roledescription="slide" aria-label="4 of 4: Open Source Week &amp; Tech Outreach">
             <div class="slide-content-col">
               <span class="slide-category">COMMUNITY &amp; IMPACT</span>
-              <h3 class="slide-title">Open Source Week &amp; Digital Literacy Outreach</h3>
+              <h3 class="slide-title">Open Source Week &amp; Tech Outreach</h3>
               <p class="slide-desc">Dedicated community sessions focused on committing to public software repositories, paired code reviews, and community tech outreaches bringing digital skills to the wider community.</p>
               <div class="slide-focus-group">
                 <span class="slide-focus-pill">Git Collaboration</span>
@@ -674,7 +674,7 @@
               </div>
             </div>
             <div class="slide-visual-col">
-              <img src="partners/slide-opensource.jpg" alt="ATBU Developers Club community open-source contributors" class="slide-image" loading="lazy" />
+              <img src="partners/bootcamp-removebg-preview.png" alt="ATBU Developers Club community outreach contributors" class="slide-illustration" loading="lazy" />
             </div>
           </div>
 
@@ -806,6 +806,12 @@
       let touchEndX = 0;
 
       function goToSlide(index) {
+        // Pause any video in current slide before switching
+        const currentVideo = slides[currentIndex].querySelector('video');
+        if (currentVideo) {
+          try { currentVideo.pause(); } catch (e) {}
+        }
+
         slides[currentIndex].classList.remove('is-active');
         dots[currentIndex].classList.remove('is-active');
         dots[currentIndex].setAttribute('aria-selected', 'false');
@@ -815,6 +821,18 @@
         slides[currentIndex].classList.add('is-active');
         dots[currentIndex].classList.add('is-active');
         dots[currentIndex].setAttribute('aria-selected', 'true');
+
+        // Play video in new active slide
+        const nextVideo = slides[currentIndex].querySelector('video');
+        if (nextVideo) {
+          try {
+            nextVideo.currentTime = 0;
+            const playPromise = nextVideo.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(() => {});
+            }
+          } catch (e) {}
+        }
       }
 
       function nextSlide() {
@@ -886,6 +904,27 @@
       }
 
       startTimer();
+
+      // Auto-start video on initial page load with fallback on first touch/interaction
+      const hackathonVideo = document.getElementById('hackathon-video-player');
+      if (hackathonVideo) {
+        hackathonVideo.muted = true;
+        hackathonVideo.defaultMuted = true;
+        const playPromise = hackathonVideo.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            const resumeAutoplay = () => {
+              hackathonVideo.play().catch(() => {});
+              window.removeEventListener('click', resumeAutoplay);
+              window.removeEventListener('touchstart', resumeAutoplay);
+              window.removeEventListener('scroll', resumeAutoplay);
+            };
+            window.addEventListener('click', resumeAutoplay, { once: true, passive: true });
+            window.addEventListener('touchstart', resumeAutoplay, { once: true, passive: true });
+            window.addEventListener('scroll', resumeAutoplay, { once: true, passive: true });
+          });
+        }
+      }
     })();
   </script>
 
