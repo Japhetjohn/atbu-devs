@@ -38,18 +38,16 @@
         </div>
       </a>
 
-      <!-- Desktop Navigation Links (Constitution-Informed Information Architecture) -->
+      <!-- Desktop Navigation Links (Only Active Sections with Content) -->
       <nav class="hero-nav" id="hero-nav" aria-label="Main Navigation">
         <a href="#about" class="nav-item">About</a>
+        <a href="#partners" class="nav-item">Partners</a>
         <a href="#membership" class="nav-item">Membership</a>
         <a href="#activities" class="nav-item">Activities</a>
-        <a href="#learning" class="nav-item">Learning</a>
-        <a href="#community" class="nav-item">Community</a>
-        <a href="#partners" class="nav-item">Partners</a>
-        <a href="CONSTITUTION.md" class="nav-item" target="_blank" rel="noopener noreferrer">Constitution</a>
+        <a href="#faq" class="nav-item">FAQ</a>
       </nav>
 
-      <!-- Right Action Group (Pill CTA + Circular Charter Info Button) -->
+      <!-- Right Action Group (Pill CTA) -->
       <div class="header-actions">
         <a href="#membership" class="header-cta-pill" aria-label="Explore Membership">
           <span>Explore Membership</span>
@@ -57,10 +55,6 @@
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
-        </a>
-
-        <a href="CONSTITUTION.md" target="_blank" rel="noopener noreferrer" class="header-cta-circle" aria-label="Official Constitution and Charter Information" title="Official Constitution & Charter">
-          <span class="header-circle-symbol" aria-hidden="true">?</span>
         </a>
 
         <!-- Mobile Menu Toggle Button -->
@@ -92,12 +86,10 @@
 
         <nav class="mobile-drawer-nav" aria-label="Mobile Navigation">
           <a href="#about" class="mobile-nav-link">About</a>
+          <a href="#partners" class="mobile-nav-link">Partners</a>
           <a href="#membership" class="mobile-nav-link">Membership</a>
           <a href="#activities" class="mobile-nav-link">Activities</a>
-          <a href="#learning" class="mobile-nav-link">Learning</a>
-          <a href="#community" class="mobile-nav-link">Community</a>
-          <a href="#partners" class="mobile-nav-link">Partners</a>
-          <a href="CONSTITUTION.md" class="mobile-nav-link" target="_blank" rel="noopener noreferrer">Constitution (v1.0)</a>
+          <a href="#faq" class="mobile-nav-link">FAQ</a>
         </nav>
 
         <div class="mobile-drawer-bottom">
@@ -129,7 +121,7 @@
 
         <!-- Single Primary CTA (Pill with Arrow Icon Circle) -->
         <div class="hero-actions">
-          <a href="#membership" class="btn-pill-cta" id="hero-primary-cta" aria-label="Explore Community">
+          <a href="#about" class="btn-pill-cta" id="hero-primary-cta" aria-label="Explore Community">
             <span class="btn-pill-icon-wrap" aria-hidden="true">
               <svg class="btn-pill-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -471,8 +463,8 @@
             Membership is open to every registered student of Abubakar Tafawa Balewa University across all faculties and departments. Gain access to hands-on bootcamps, collaborative software teams, peer mentorship, and verified club credentials with an official Membership Identification Number.
           </p>
           <div class="story-action">
-            <a href="#join" class="story-cta-pill" aria-label="Join the Club">
-              <span>Join the Club</span>
+            <a href="#faq" class="story-cta-pill" aria-label="Membership Details">
+              <span>Membership Details</span>
               <svg class="story-cta-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -497,8 +489,8 @@
             Connect with fellow builders through specialized tracks in Web, Mobile, AI, and Cybersecurity. Collaborate on live open-source projects, participate in university hackathons, and attend technical meetups designed to prepare you for real-world engineering careers.
           </p>
           <div class="story-action">
-            <a href="#community" class="story-cta-pill" aria-label="Explore Community">
-              <span>Explore Community</span>
+            <a href="#activities" class="story-cta-pill" aria-label="Explore Programs">
+              <span>Explore Programs</span>
               <svg class="story-cta-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -640,7 +632,7 @@
               </div>
             </div>
             <div class="slide-visual-col">
-              <img src="partners/bootcamp-removebg-preview.png" alt="Student developers participating in technical bootcamps" class="slide-illustration" loading="lazy" />
+              <img src="partners/lily-ai-removebg-preview.png" alt="Student developers participating in web and AI bootcamps" class="slide-illustration" loading="lazy" />
             </div>
           </div>
 
@@ -704,6 +696,231 @@
 
     </div>
   </section>
+
+  <!-- ========================================================================= -->
+  <!-- FAQ SECTION (Minimalist Serviceblocks Reference Architecture)             -->
+  <!-- ========================================================================= -->
+  <section class="faq-section" id="faq" aria-label="Frequently Asked Questions">
+    <div class="faq-container">
+      
+      <!-- Section Header (Left-Aligned, Two-Tone Minimalist) -->
+      <div class="faq-header" data-scroll-reveal>
+        <h2 class="faq-heading">
+          Everything to know <span class="faq-heading-bold">before you join</span>
+        </h2>
+      </div>
+
+      <!-- FAQ Accordion List (Clean Hairline Dividing Rows) -->
+      <div class="faq-list" role="region" aria-label="Frequently Asked Questions">
+        
+        <!-- FAQ Item 1 -->
+        <div class="faq-item" data-scroll-reveal>
+          <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-1" id="faq-q-1">
+            <span class="faq-question-text">Who is eligible to join the ATBU Developers Club?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer-wrapper" id="faq-ans-1" role="region" aria-labelledby="faq-q-1">
+            <div class="faq-answer-inner">
+              <p class="faq-answer-text">
+                Membership is open to all registered students of Abubakar Tafawa Balewa University across every department, faculty, and level. Whether you are writing your first line of code or already shipping applications, there are no prerequisites to join.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item" data-scroll-reveal>
+          <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-2" id="faq-q-2">
+            <span class="faq-question-text">What specific tracks and tech stacks can I focus on?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer-wrapper" id="faq-ans-2" role="region" aria-labelledby="faq-q-2">
+            <div class="faq-answer-inner">
+              <p class="faq-answer-text">
+                We operate active technical directorates covering Full-Stack Web Development, Mobile App Engineering (iOS/Android), Artificial Intelligence &amp; Machine Learning, UI/UX Product Design, and Cybersecurity.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item" data-scroll-reveal>
+          <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-3" id="faq-q-3">
+            <span class="faq-question-text">Will participating in club activities affect my academic studies?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer-wrapper" id="faq-ans-3" role="region" aria-labelledby="faq-q-3">
+            <div class="faq-answer-inner">
+              <p class="faq-answer-text">
+                Not at all. Club schedules, hackathons, and sessions are specifically built around the university's academic calendar to complement your coursework with real-world engineering rather than compete with it.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item" data-scroll-reveal>
+          <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-4" id="faq-q-4">
+            <span class="faq-question-text">What credentials and resources do members receive?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer-wrapper" id="faq-ans-4" role="region" aria-labelledby="faq-q-4">
+            <div class="faq-answer-inner">
+              <p class="faq-answer-text">
+                Registered members receive an official Membership Identification Number, access to collaborative GitHub repositories, hands-on bootcamps, technical workshops, and mentorship pipelines with industry professionals.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item" data-scroll-reveal>
+          <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-5" id="faq-q-5">
+            <span class="faq-question-text">How are collaborative projects and source code managed?</span>
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="faq-answer-wrapper" id="faq-ans-5" role="region" aria-labelledby="faq-q-5">
+            <div class="faq-answer-inner">
+              <p class="faq-answer-text">
+                Projects built within the club are maintained as collaborative and open-source software, ensuring student builders receive full moral recognition and portfolio assets for every line of code they ship.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SITE FOOTER (Sleek Dark High-End Architecture • ServiceBlocks Reference) -->
+  <!-- ========================================================================= -->
+  <footer class="site-footer" role="contentinfo" aria-label="Site Footer">
+    <div class="footer-container">
+      
+      <!-- Main Footer Grid (Multi-Column Layout) -->
+      <div class="footer-grid">
+        
+        <!-- Column 1: Brand & Contact Info (Left Side - Wider Column) -->
+        <div class="footer-col footer-col-brand">
+          <div class="footer-brand-header">
+            <span class="footer-brand-wordmark">ATBUDEVS</span>
+            <span class="footer-brand-motto">Learn. Build. Impact.</span>
+          </div>
+          <p class="footer-description">
+            Empowering student developers to master modern technologies, collaborate on real-world projects, and build impactful digital solutions.
+          </p>
+          <div class="footer-cta-wrap">
+            <a href="https://chat.whatsapp.com/" target="_blank" rel="noopener noreferrer" class="footer-cta-pill" aria-label="Join WhatsApp Community">
+              <span>Join WhatsApp Community &rarr;</span>
+            </a>
+          </div>
+          <div class="footer-contact-details">
+            <a href="mailto:atbudevs@atbu.edu.ng" class="footer-email-link">atbudevs@atbu.edu.ng</a>
+            <p class="footer-location-tag">Abubakar Tafawa Balewa University &bull; Bauchi, Nigeria</p>
+          </div>
+        </div>
+
+        <!-- Column 2: Tracks & Directorates -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Tracks &amp; Directorates</h3>
+          <ul class="footer-nav-list">
+            <li><a href="#activities" class="footer-link">Web Development</a></li>
+            <li><a href="#activities" class="footer-link">Mobile Engineering</a></li>
+            <li><a href="#activities" class="footer-link">Artificial Intelligence</a></li>
+            <li><a href="#activities" class="footer-link">Cybersecurity</a></li>
+            <li><a href="#activities" class="footer-link">UI/UX Product Design</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Activities & Events -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Activities &amp; Events</h3>
+          <ul class="footer-nav-list">
+            <li><a href="#activities" class="footer-link">Annual Developers Summit</a></li>
+            <li><a href="#activities" class="footer-link">Student Hackathons</a></li>
+            <li><a href="#activities" class="footer-link">Technical Bootcamps</a></li>
+            <li><a href="#activities" class="footer-link">Open Source Week</a></li>
+            <li><a href="#activities" class="footer-link">Community Outreach</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Club & Governance -->
+        <div class="footer-col">
+          <h3 class="footer-col-title">Club &amp; Governance</h3>
+          <ul class="footer-nav-list">
+            <li><a href="#about" class="footer-link">About ATBUDEVS</a></li>
+            <li><a href="#founder" class="footer-link">Meet the Founder</a></li>
+            <li><a href="#membership" class="footer-link">Membership Guidelines</a></li>
+            <li><a href="CONSTITUTION.md" class="footer-link">Official Constitution</a></li>
+            <li><a href="#faq" class="footer-link">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Rightmost Area: Visual Element / Decorative Asset -->
+        <div class="footer-col footer-col-visual" aria-hidden="true">
+          <img 
+            src="partners/footer-archway.png" 
+            alt="ATBUDEVS Architectural Portal" 
+            class="footer-archway-graphic"
+            width="214" 
+            height="220" 
+            loading="lazy" 
+          />
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar & Official Logos (Below the Hairline Divider) -->
+      <div class="footer-bottom-wrapper">
+        <div class="footer-logos-bar">
+          <div class="footer-official-logos" aria-label="Official University and Club Insignia">
+            <img 
+              src="atbu-removebg-preview.png" 
+              alt="ATBU Official University Crest" 
+              class="footer-official-crest" 
+              width="44" 
+              height="38" 
+              loading="lazy" 
+            />
+            <span class="footer-logo-divider" aria-hidden="true"></span>
+            <img 
+              src="partners/atbudevs-emblem.png" 
+              alt="ATBUDEVS Official Emblem" 
+              class="footer-official-emblem" 
+              width="36" 
+              height="38" 
+              loading="lazy" 
+            />
+          </div>
+        </div>
+
+        <div class="footer-legal-bar">
+          <p class="footer-copyright">
+            &copy; 2026 Abubakar Tafawa Balewa University Developers Club (ATBUDEVS). All rights reserved.
+          </p>
+          <div class="footer-legal-links">
+            <a href="CONSTITUTION.md" class="footer-legal-link">Privacy Policy</a>
+            <span class="footer-legal-dot" aria-hidden="true">&bull;</span>
+            <a href="CONSTITUTION.md" class="footer-legal-link">Constitution &amp; Terms</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
 
   <!-- Mobile Drawer Toggle Script (Vanilla JS, Zero Dependencies) -->
   <script>
@@ -789,7 +1006,41 @@
     })();
   </script>
 
-  <!-- Activities & Programs Slideshow Controller -->
+  <!-- FAQ Accordion Interactive Controller -->
+  <script>
+    (function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      if (!faqItems.length) return;
+
+      faqItems.forEach((item) => {
+        const btn = item.querySelector('.faq-question-btn');
+        if (!btn) return;
+
+        btn.addEventListener('click', () => {
+          const isOpen = item.classList.contains('is-open');
+
+          // Smooth accordion UX: close other items
+          faqItems.forEach((other) => {
+            if (other !== item && other.classList.contains('is-open')) {
+              other.classList.remove('is-open');
+              const otherBtn = other.querySelector('.faq-question-btn');
+              if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+
+          if (isOpen) {
+            item.classList.remove('is-open');
+            btn.setAttribute('aria-expanded', 'false');
+          } else {
+            item.classList.add('is-open');
+            btn.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    })();
+  </script>
+
+  <!-- Activities & Programs Slideshow Controller (Debounced & Touch-Hardened) -->
   <script>
     (function() {
       const slides = document.querySelectorAll('.activity-slide');
@@ -802,10 +1053,17 @@
 
       let currentIndex = 0;
       let timer = null;
+      let isBusy = false;
       let touchStartX = 0;
+      let touchStartY = 0;
       let touchEndX = 0;
+      let touchEndY = 0;
 
       function goToSlide(index) {
+        if (isBusy) return;
+        isBusy = true;
+        setTimeout(() => { isBusy = false; }, 280);
+
         // Pause any video in current slide before switching
         const currentVideo = slides[currentIndex].querySelector('video');
         if (currentVideo) {
@@ -843,11 +1101,25 @@
         goToSlide(currentIndex - 1);
       }
 
-      if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetTimer(); });
-      if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetTimer(); });
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          nextSlide();
+          resetTimer();
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          prevSlide();
+          resetTimer();
+        });
+      }
 
       dots.forEach((dot, idx) => {
-        dot.addEventListener('click', () => {
+        dot.addEventListener('click', (e) => {
+          e.preventDefault();
           goToSlide(idx);
           resetTimer();
         });
@@ -865,18 +1137,24 @@
           }
         });
 
-        // Touch swipe gestures
+        // Touch swipe gestures with direction validation & button exclusion
         carousel.addEventListener('touchstart', (e) => {
+          if (e.target.closest('.activities-controls')) return;
+          clearInterval(timer);
           if (e.changedTouches && e.changedTouches[0]) {
             touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
           }
         }, { passive: true });
 
         carousel.addEventListener('touchend', (e) => {
+          if (e.target.closest('.activities-controls')) return;
           if (e.changedTouches && e.changedTouches[0]) {
             touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
             handleSwipe();
           }
+          resetTimer();
         }, { passive: true });
 
         carousel.addEventListener('mouseenter', () => clearInterval(timer));
@@ -884,18 +1162,21 @@
       }
 
       function handleSwipe() {
-        const threshold = 40;
-        if (touchEndX < touchStartX - threshold) {
-          nextSlide();
-          resetTimer();
-        } else if (touchEndX > touchStartX + threshold) {
-          prevSlide();
+        const dx = touchEndX - touchStartX;
+        const dy = touchEndY - touchStartY;
+        // Verify horizontal intent: dx must dominate dy by 1.3x
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.3) {
+          if (dx < 0) {
+            nextSlide();
+          } else {
+            prevSlide();
+          }
           resetTimer();
         }
       }
 
       function startTimer() {
-        timer = setInterval(nextSlide, 6500);
+        timer = setInterval(nextSlide, 7000);
       }
 
       function resetTimer() {
@@ -927,39 +1208,6 @@
       }
     })();
   </script>
-
-  <!-- ========================================================================= -->
-  <!-- TEMPORARILY DISABLED SUBSEQUENT SECTIONS (Preserved in Source for Later)  -->
-  <!-- ========================================================================= -->
-  <!--
-  <section class="section-container" id="about-legacy">
-    <div class="content-wrapper">
-      <div class="section-badge">About ATBUDEVS</div>
-      <h2 class="section-heading">Nurturing ethical developers, innovators, and digital leaders.</h2>
-    </div>
-  </section>
-
-  <section class="section-container section-alt" id="activities-legacy">
-    <div class="content-wrapper">
-      <div class="section-badge">Activities & Programs</div>
-      <h2 class="section-heading">Bootcamps, Hackathons, Workshops & Annual Summit.</h2>
-    </div>
-  </section>
-
-  <section class="section-container" id="learning">
-    <div class="content-wrapper">
-      <div class="section-badge">Learning Tracks</div>
-      <h2 class="section-heading">Specialized pathways for every level of experience.</h2>
-    </div>
-  </section>
-
-  <section class="section-container section-alt" id="community">
-    <div class="content-wrapper">
-      <div class="section-badge">Community & Membership</div>
-      <h2 class="section-heading">Join Abubakar Tafawa Balewa University Developers Club.</h2>
-    </div>
-  </section>
-  -->
 
 </body>
 </html>
