@@ -18,6 +18,7 @@
 
   /* Neutrals & Accessible Canvas */
   --color-white: #ffffff;
+  --color-warm-cream: #FAF8F5;
   --color-text-body: rgba(255, 255, 255, 0.85);
   --color-text-muted: rgba(255, 255, 255, 0.65);
   --color-text-subtle: rgba(255, 255, 255, 0.50);
@@ -303,40 +304,124 @@ a {
   outline-offset: 3px;
 }
 
-/* Mobile Hamburger Menu Toggle Button (Hidden on Desktop) */
+/* ==========================================================================
+   MOBILE HAMBURGER MENU & NAVIGATION DRAWER
+   Asymmetrical Modern Pill Iconography & Refined Brand Architecture
+   ========================================================================== */
+/* Mobile Hamburger Menu Toggle Button (Borderless, Balanced Floating Icon) */
 .mobile-menu-toggle {
   display: none;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 5px;
-  width: 38px;
-  height: 38px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
   cursor: pointer;
-  padding: 0;
-  color: var(--color-white);
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  padding: 8px 4px;
+  min-width: 44px;
+  min-height: 44px;
+  color: #FFFFFF;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.18s ease;
 }
 
-.mobile-menu-toggle:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: var(--color-celadon);
+@media (hover: hover) and (pointer: fine) {
+  .mobile-menu-toggle:hover {
+    background: transparent;
+    border: none;
+    transform: scale(1.06);
+  }
 }
 
 .mobile-menu-toggle:focus-visible {
-  outline: 2px solid var(--color-light-blue);
-  outline-offset: 2px;
+  outline: 2px solid var(--color-celadon);
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
+.mobile-menu-toggle:active {
+  transform: scale(0.94);
+}
+
+/* Asymmetrical Hamburger Box (Exact Reference Proportions) */
+.hamburger-box {
+  width: 22px;
+  height: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start; /* Precise Left-Alignment */
+}
+
+/* The 3 Pill Bars */
 .hamburger-line {
-  width: 20px;
-  height: 2px;
-  background-color: var(--color-white);
-  border-radius: 1px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  height: 3px;
+  background-color: #FFFFFF;
+  border-radius: 9999px; /* Smooth pill caps */
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.2s ease;
+}
+
+/* Top bar: Short pill (50% width = 11px) */
+.hamburger-line-top,
+.hamburger-line:nth-child(1) {
+  width: 11px;
+}
+
+/* Middle bar: Full width pill (100% width = 22px) */
+.hamburger-line-mid,
+.hamburger-line:nth-child(2) {
+  width: 22px;
+}
+
+/* Bottom bar: Short pill (50% width = 11px) */
+.hamburger-line-bot,
+.hamburger-line:nth-child(3) {
+  width: 11px;
+}
+
+/* Hover micro-interaction: organic stretch */
+@media (hover: hover) and (pointer: fine) {
+  .mobile-menu-toggle:hover .hamburger-line {
+    background-color: var(--color-celadon);
+  }
+  .mobile-menu-toggle:hover .hamburger-line-top,
+  .mobile-menu-toggle:hover .hamburger-line:nth-child(1) {
+    width: 16px;
+  }
+  .mobile-menu-toggle:hover .hamburger-line-bot,
+  .mobile-menu-toggle:hover .hamburger-line:nth-child(3) {
+    width: 16px;
+  }
+}
+
+/* Smooth Morphing state when menu is open */
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-box {
+  justify-content: center;
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-line-top,
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+  width: 22px;
+  transform: translateY(3px) rotate(45deg);
+  background-color: var(--color-celadon);
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-line-mid,
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-line-bot,
+.mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+  width: 22px;
+  transform: translateY(-3px) rotate(-45deg);
+  background-color: var(--color-celadon);
 }
 
 /* --------------------------------------------------------------------------
@@ -350,7 +435,7 @@ a {
   justify-content: flex-end;
   visibility: hidden;
   pointer-events: none;
-  transition: visibility 0.25s ease;
+  transition: visibility 0.28s ease;
 }
 
 .mobile-drawer.is-open {
@@ -361,9 +446,11 @@ a {
 .mobile-drawer-backdrop {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(5, 8, 15, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   opacity: 0;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.28s ease;
 }
 
 .mobile-drawer.is-open .mobile-drawer-backdrop {
@@ -372,18 +459,19 @@ a {
 
 .mobile-drawer-panel {
   position: relative;
-  width: 320px;
-  max-width: 85vw;
+  width: 330px;
+  max-width: 86vw;
   height: 100%;
-  background-color: rgba(8, 12, 20, 0.98);
-  border-left: 1px solid var(--color-border);
-  padding: 1.75rem 1.5rem;
+  background-color: #080C14; /* Deep charcoal navy matching hero tone */
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.85rem 1.65rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transform: translateX(100%);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -12px 0 32px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
 }
 
 .mobile-drawer.is-open .mobile-drawer-panel {
@@ -399,49 +487,114 @@ a {
 }
 
 .mobile-drawer-close {
-  background: transparent;
-  border: none;
-  color: var(--color-white);
-  font-size: 2rem;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.05);
+  color: #FFFFFF;
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
+  padding: 0;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              border-color 0.2s ease,
+              color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mobile-drawer-close:hover {
+    background: rgba(173, 247, 182, 0.14);
+    border-color: var(--color-celadon);
+    color: var(--color-celadon);
+    transform: rotate(90deg);
+  }
 }
 
 .mobile-drawer-close:focus-visible {
-  outline: 2px solid var(--color-light-blue);
-  border-radius: 4px;
+  outline: 2px solid var(--color-celadon);
+  outline-offset: 2px;
 }
 
 .mobile-drawer-nav {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  padding: 1.5rem 0;
+  gap: 0.35rem;
+  padding: 1.75rem 0;
   flex: 1;
 }
 
 .mobile-nav-link {
-  font-size: 1.15rem;
-  font-weight: 500;
-  color: var(--color-white);
-  padding: 0.85rem 0.5rem;
-  border-radius: 6px;
-  transition: background-color 0.18s ease, color 0.18s ease;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: var(--font-family);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  padding: 0.85rem 0.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
 }
 
-.mobile-nav-link:hover {
-  color: var(--color-celadon);
-  background-color: rgba(255, 255, 255, 0.05);
+.mobile-nav-idx {
+  font-family: var(--font-family);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-celadon); /* #ADF7B6 index marker */
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mobile-nav-link:hover {
+    color: var(--color-celadon);
+    background-color: rgba(255, 255, 255, 0.06);
+    transform: translateX(4px);
+  }
 }
 
 .mobile-nav-link:focus-visible {
-  outline: 2px solid var(--color-light-blue);
+  outline: 2px solid var(--color-celadon);
+  outline-offset: 2px;
 }
 
 .mobile-drawer-bottom {
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mobile-drawer-cta-wrap {
+  width: 100%;
+}
+
+.mobile-drawer-footer-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-family: var(--font-family);
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.mobile-drawer-motto {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-lemon-chiffon);
+  margin: 0;
+}
+
+.mobile-drawer-contact {
+  color: #94a3b8;
+  margin: 0;
 }
 
 .mobile-full-width {
@@ -450,6 +603,7 @@ a {
   padding: 0.75rem 1.5rem;
   font-size: 0.95rem;
 }
+
 
 /* --------------------------------------------------------------------------
    HERO CONTENT AREA — Left-Aligned, High-Contrast Typography
@@ -1640,19 +1794,20 @@ a {
 
 /* ==========================================================================
    FREQUENTLY ASKED QUESTIONS (FAQ) SECTION
-   Ultra-clean Minimalist Architecture (Serviceblocks Reference Style)
-   Pristine Background, Hairline Dividing Rows, Emerald Active Accent
+   Ultra-Clean Minimalist Architecture (ServiceBlocks Reference Style)
+   Warm Off-White / Cream Canvas (#FAF8F5), Hairline Dividing Rows, High Contrast
    ========================================================================== */
 .faq-section {
   position: relative;
-  background-color: #FFFFFF;
+  background-color: var(--color-warm-cream, #FAF8F5); /* Refined warm off-white / light cream canvas */
   color: #0f172a;
-  padding: 6.5rem 0 7.5rem 0;
+  padding: 6rem 0 6.5rem 0; /* py-24 generous breathing space */
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
   box-sizing: border-box;
   border: none;
+  margin-bottom: 0;
 }
 
 .faq-container {
@@ -1677,24 +1832,24 @@ a {
   font-weight: 350; /* Slim regular leading weight */
   line-height: 1.15;
   letter-spacing: -0.035em;
-  color: #0f172a;
+  color: #0f172a; /* Deep charcoal text */
   margin: 0;
   word-break: break-word;
 }
 
 .faq-heading-bold {
   font-weight: 850;
-  color: #080c14;
+  color: #080c14; /* Bold dark charcoal segment */
 }
 
 /* FAQ Accordion List (Clean Hairline Dividing Rows) */
 .faq-list {
-  border-top: 1px solid rgba(15, 23, 42, 0.12);
+  border-top: 1px solid rgba(15, 23, 42, 0.10); /* Hairline baseline divider */
   width: 100%;
 }
 
 .faq-item {
-  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10); /* Hairline bottom row border */
   transition: border-color 0.2s ease;
 }
 
@@ -1709,7 +1864,7 @@ a {
   border: none;
   text-align: left;
   cursor: pointer;
-  color: #0f172a;
+  color: #1e293b; /* Readable dark charcoal default */
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
@@ -1717,7 +1872,7 @@ a {
 }
 
 .faq-question-btn:hover {
-  color: #334155;
+  color: #0f172a;
 }
 
 .faq-question-text {
@@ -1737,7 +1892,7 @@ a {
   height: 20px;
   min-width: 20px;
   min-height: 20px;
-  color: #94a3b8;
+  color: #94a3b8; /* Muted slate default */
   flex-shrink: 0;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.22s ease;
 }
@@ -1750,7 +1905,8 @@ a {
 
 /* Active / Open State: Highlight Question Text and Chevron in Brand Emerald Tone */
 .faq-item.is-open .faq-question-text {
-  color: #0d7653; /* High contrast brand emerald green tone (5.2:1 against #FFFFFF, WCAG AAA) */
+  color: #0d7653; /* Primary brand emerald green tone (5.31:1 against #FAF8F5, WCAG AAA) */
+  font-weight: 700;
 }
 
 .faq-item.is-open .faq-chevron {
@@ -1778,7 +1934,7 @@ a {
   font-size: clamp(0.98rem, 1.15vw, 1.08rem);
   font-weight: 400;
   line-height: 1.75;
-  color: #475569;
+  color: #475569; /* Soft, highly readable body copy (7.15:1 contrast against #FAF8F5, WCAG AAA) */
   margin: 0;
   padding: 0.5rem 3rem 1.85rem 0;
   max-width: 820px;
@@ -1812,9 +1968,15 @@ a {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2.2fr 1fr 1fr 1.15fr auto;
+  grid-template-columns: 2fr 3.2fr auto;
   gap: 3.5rem;
   align-items: flex-start;
+}
+
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
 }
 
 /* Column 1: Brand & Contact Info */
@@ -2127,16 +2289,22 @@ a {
 
   /* Footer Tablet Breakdown */
   .footer-grid {
-    grid-template-columns: 1.8fr 1fr 1fr 1.1fr;
-    gap: 3rem 2rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
 
   .footer-col-brand {
-    grid-column: span 2;
+    grid-column: auto;
+  }
+
+  .footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 
   .footer-col-visual {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -2659,39 +2827,67 @@ a {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
   }
 
   .footer-col-brand {
-    grid-column: auto;
-    margin-bottom: 0.5rem;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .footer-brand-wordmark {
+    font-size: 2.25rem;
   }
 
   .footer-description {
     max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
   }
 
   .footer-cta-pill {
     width: 100%;
-    max-width: 320px;
+    max-width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .footer-contact-details {
+    margin-top: 1.25rem;
+  }
+
+  .footer-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.25rem 1.5rem;
+    width: 100%;
+  }
+
+  .footer-links-grid .footer-col:last-child {
+    grid-column: span 2;
+  }
+
+  .footer-col-title {
+    font-size: 0.8rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .footer-link {
+    font-size: 0.88rem;
+    padding: 0.2rem 0;
+    display: inline-block;
   }
 
   .footer-col-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1rem;
-    margin: 0.5rem 0;
-  }
-
-  .footer-archway-graphic {
-    width: 160px;
-    max-width: 160px;
+    display: none !important;
   }
 
   .footer-bottom-wrapper {
-    margin-top: 3.5rem;
+    margin-top: 2.75rem;
     padding-top: 1.75rem;
   }
 
@@ -2700,10 +2896,35 @@ a {
     margin-bottom: 1.25rem;
   }
 
+  .footer-official-logos {
+    gap: 1rem;
+  }
+
+  .footer-official-crest,
+  .footer-official-emblem {
+    height: 36px;
+    width: auto;
+  }
+
   .footer-legal-bar {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.85rem;
+  }
+
+  .footer-copyright {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .footer-legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+  }
+
+  .footer-legal-link {
+    font-size: 0.82rem;
   }
 }
 
@@ -2935,6 +3156,15 @@ a {
 
   .site-footer {
     padding: 3.5rem 0 2rem 0;
+  }
+
+  .footer-brand-wordmark {
+    font-size: 2rem;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem 1rem;
   }
 
   .footer-cta-pill {

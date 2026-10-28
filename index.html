@@ -6,18 +6,26 @@
   <title>ATBUDEVS — Abubakar Tafawa Balewa University Developers Club</title>
   <meta name="description" content="Official website of the Abubakar Tafawa Balewa University Developers Club (ATBUDEVS). Build real software and grow as a developer." />
   
+  <!-- Official Favicons & Touch Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  
   <!-- Typography Reference Fonts: Inter Tight & Manrope -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
 
-  <!-- ========================================================= -->
-  <!-- HERO SECTION (Single-Screen Editorial Photographic Layout) -->
-  <!-- ========================================================= -->
+  <!-- Component: hero.html -->
   <main class="hero-section" id="hero">
     
     <!-- Redesigned Header Navigation (Recreating Reference Design) -->
@@ -26,7 +34,7 @@
       <!-- Brand Identity (Logo + Two-Tier Wordmark) -->
       <a href="#hero" class="brand-identity" aria-label="ATBU Developers Club Home">
         <img 
-          src="atbu-removebg-preview.png" 
+          src="assets/logos/atbu-crest.png" 
           alt="ATBU Developers Club Official Seal" 
           class="brand-logo"
           width="42"
@@ -57,11 +65,13 @@
           </svg>
         </a>
 
-        <!-- Mobile Menu Toggle Button -->
+        <!-- Mobile Menu Toggle Button (Asymmetrical Modern Hamburger) -->
         <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open Navigation Menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+          <span class="hamburger-box" aria-hidden="true">
+            <span class="hamburger-line hamburger-line-top"></span>
+            <span class="hamburger-line hamburger-line-mid"></span>
+            <span class="hamburger-line hamburger-line-bot"></span>
+          </span>
         </button>
       </div>
 
@@ -73,33 +83,57 @@
       <div class="mobile-drawer-panel">
         <div class="mobile-drawer-top">
           <div class="brand-identity">
-            <img src="atbu-removebg-preview.png" alt="ATBU Developers Club Seal" class="brand-logo" width="36" height="36" />
+            <img src="assets/logos/atbu-crest.png" alt="ATBU Developers Club Seal" class="brand-logo" width="36" height="36" />
             <div class="brand-naming">
               <span class="brand-title">atbudevs</span>
               <span class="brand-subtitle">Developers Club</span>
             </div>
           </div>
           <button type="button" class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close Navigation Menu">
-            &times;
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
           </button>
         </div>
 
         <nav class="mobile-drawer-nav" aria-label="Mobile Navigation">
-          <a href="#about" class="mobile-nav-link">About</a>
-          <a href="#partners" class="mobile-nav-link">Partners</a>
-          <a href="#membership" class="mobile-nav-link">Membership</a>
-          <a href="#activities" class="mobile-nav-link">Activities</a>
-          <a href="#faq" class="mobile-nav-link">FAQ</a>
+          <a href="#about" class="mobile-nav-link">
+            <span class="mobile-nav-idx">01</span>
+            <span class="mobile-nav-label">About</span>
+          </a>
+          <a href="#partners" class="mobile-nav-link">
+            <span class="mobile-nav-idx">02</span>
+            <span class="mobile-nav-label">Partners</span>
+          </a>
+          <a href="#membership" class="mobile-nav-link">
+            <span class="mobile-nav-idx">03</span>
+            <span class="mobile-nav-label">Membership</span>
+          </a>
+          <a href="#activities" class="mobile-nav-link">
+            <span class="mobile-nav-idx">04</span>
+            <span class="mobile-nav-label">Activities</span>
+          </a>
+          <a href="#faq" class="mobile-nav-link">
+            <span class="mobile-nav-idx">05</span>
+            <span class="mobile-nav-label">FAQ</span>
+          </a>
         </nav>
 
         <div class="mobile-drawer-bottom">
-          <a href="#membership" class="header-cta-pill mobile-full-width" aria-label="Explore Membership">
-            <span>Explore Membership</span>
-            <svg class="header-cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
+          <div class="mobile-drawer-cta-wrap">
+            <a href="#membership" class="header-cta-pill mobile-full-width" aria-label="Explore Membership">
+              <span>Explore Membership</span>
+              <svg class="header-cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+          <div class="mobile-drawer-footer-info">
+            <p class="mobile-drawer-motto">Learn. Build. Impact.</p>
+            <p class="mobile-drawer-contact">atbudevs@atbu.edu.ng</p>
+          </div>
         </div>
       </div>
     </div>
@@ -137,9 +171,7 @@
 
   </main>
 
-  <!-- ========================================================================= -->
-  <!-- POWERED BY / PARTNERS CAROUSEL SECTION                                    -->
-  <!-- ========================================================================= -->
+  <!-- Component: partners.html -->
   <section class="partners-section" id="partners" aria-label="Our Partners and Affiliated Student Associations">
     <div class="partners-container">
       <h2 class="partners-heading">Our Partners.</h2>
@@ -150,56 +182,56 @@
           <div class="partners-slide">
             <div class="partner-card" title="Nigeria Association of Computing Students (NACOS)">
               <div class="partner-logo-box">
-                <img src="partners/nigeria-association-of-computing-students.png" alt="Nigeria Association of Computing Students (NACOS)" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/nigeria-association-of-computing-students.png" alt="Nigeria Association of Computing Students (NACOS)" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NACOS</span>
             </div>
 
             <div class="partner-card" title="Nigerian Universities Engineering Students Association (NUESA)">
               <div class="partner-logo-box">
-                <img src="partners/nigerian-universities-engineering-students-association.png" alt="Nigerian Universities Engineering Students Association (NUESA)" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/nigerian-universities-engineering-students-association.png" alt="Nigerian Universities Engineering Students Association (NUESA)" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NUESA</span>
             </div>
 
             <div class="partner-card" title="National Association of Science Students (NASS)">
               <div class="partner-logo-box">
-                <img src="partners/national-association-of-science-students.png" alt="National Association of Science Students (NASS)" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/national-association-of-science-students.png" alt="National Association of Science Students (NASS)" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NASS</span>
             </div>
 
             <div class="partner-card" title="National Association of University Students Bauchi CMC (NAUS)">
               <div class="partner-logo-box">
-                <img src="partners/national-association-of-university-student-bauchi-cmc.png" alt="National Association of University Students Bauchi CMC (NAUS)" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/national-association-of-university-student-bauchi-cmc.png" alt="National Association of University Students Bauchi CMC (NAUS)" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NAUS CMC</span>
             </div>
 
             <div class="partner-card" title="Association of Environmental Technology Students (AETS)">
               <div class="partner-logo-box">
-                <img src="partners/association-of-environmental-technology-students.png" alt="Association of Environmental Technology Students (AETS)" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/association-of-environmental-technology-students.png" alt="Association of Environmental Technology Students (AETS)" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">AETS</span>
             </div>
 
             <div class="partner-card" title="Association of Management Sciences Students (AMSS)">
               <div class="partner-logo-box">
-                <img src="partners/association-of-management-sciences-students.png" alt="Association of Management Sciences Students (AMSS)" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/association-of-management-sciences-students.png" alt="Association of Management Sciences Students (AMSS)" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">AMSS</span>
             </div>
 
             <div class="partner-card" title="Science and Technology Education Students Association (STESA)">
               <div class="partner-logo-box">
-                <img src="partners/science-and-technology-education-students-association.png" alt="Science and Technology Education Students Association (STESA)" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/science-and-technology-education-students-association.png" alt="Science and Technology Education Students Association (STESA)" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">STESA</span>
             </div>
 
             <div class="partner-card" title="Students Representative Assembly ATBU (SRA)">
               <div class="partner-logo-box">
-                <img src="partners/students-representative-assembly-atbu.png" alt="Students Representative Assembly ATBU (SRA)" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/students-representative-assembly-atbu.png" alt="Students Representative Assembly ATBU (SRA)" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">SRA ATBU</span>
             </div>
@@ -209,56 +241,56 @@
           <div class="partners-slide" aria-hidden="true">
             <div class="partner-card" title="Nigeria Association of Computing Students (NACOS)">
               <div class="partner-logo-box">
-                <img src="partners/nigeria-association-of-computing-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/nigeria-association-of-computing-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NACOS</span>
             </div>
 
             <div class="partner-card" title="Nigerian Universities Engineering Students Association (NUESA)">
               <div class="partner-logo-box">
-                <img src="partners/nigerian-universities-engineering-students-association.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/nigerian-universities-engineering-students-association.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NUESA</span>
             </div>
 
             <div class="partner-card" title="National Association of Science Students (NASS)">
               <div class="partner-logo-box">
-                <img src="partners/national-association-of-science-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/national-association-of-science-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NASS</span>
             </div>
 
             <div class="partner-card" title="National Association of University Students Bauchi CMC (NAUS)">
               <div class="partner-logo-box">
-                <img src="partners/national-association-of-university-student-bauchi-cmc.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/national-association-of-university-student-bauchi-cmc.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NAUS CMC</span>
             </div>
 
             <div class="partner-card" title="Association of Environmental Technology Students (AETS)">
               <div class="partner-logo-box">
-                <img src="partners/association-of-environmental-technology-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/association-of-environmental-technology-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">AETS</span>
             </div>
 
             <div class="partner-card" title="Association of Management Sciences Students (AMSS)">
               <div class="partner-logo-box">
-                <img src="partners/association-of-management-sciences-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/association-of-management-sciences-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">AMSS</span>
             </div>
 
             <div class="partner-card" title="Science and Technology Education Students Association (STESA)">
               <div class="partner-logo-box">
-                <img src="partners/science-and-technology-education-students-association.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/science-and-technology-education-students-association.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">STESA</span>
             </div>
 
             <div class="partner-card" title="Students Representative Assembly ATBU (SRA)">
               <div class="partner-logo-box">
-                <img src="partners/students-representative-assembly-atbu.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/students-representative-assembly-atbu.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">SRA ATBU</span>
             </div>
@@ -268,56 +300,56 @@
           <div class="partners-slide" aria-hidden="true">
             <div class="partner-card" title="Nigeria Association of Computing Students (NACOS)">
               <div class="partner-logo-box">
-                <img src="partners/nigeria-association-of-computing-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/nigeria-association-of-computing-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NACOS</span>
             </div>
 
             <div class="partner-card" title="Nigerian Universities Engineering Students Association (NUESA)">
               <div class="partner-logo-box">
-                <img src="partners/nigerian-universities-engineering-students-association.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/nigerian-universities-engineering-students-association.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NUESA</span>
             </div>
 
             <div class="partner-card" title="National Association of Science Students (NASS)">
               <div class="partner-logo-box">
-                <img src="partners/national-association-of-science-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/national-association-of-science-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NASS</span>
             </div>
 
             <div class="partner-card" title="National Association of University Students Bauchi CMC (NAUS)">
               <div class="partner-logo-box">
-                <img src="partners/national-association-of-university-student-bauchi-cmc.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/national-association-of-university-student-bauchi-cmc.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NAUS CMC</span>
             </div>
 
             <div class="partner-card" title="Association of Environmental Technology Students (AETS)">
               <div class="partner-logo-box">
-                <img src="partners/association-of-environmental-technology-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/association-of-environmental-technology-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">AETS</span>
             </div>
 
             <div class="partner-card" title="Association of Management Sciences Students (AMSS)">
               <div class="partner-logo-box">
-                <img src="partners/association-of-management-sciences-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/association-of-management-sciences-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">AMSS</span>
             </div>
 
             <div class="partner-card" title="Science and Technology Education Students Association (STESA)">
               <div class="partner-logo-box">
-                <img src="partners/science-and-technology-education-students-association.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/science-and-technology-education-students-association.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">STESA</span>
             </div>
 
             <div class="partner-card" title="Students Representative Assembly ATBU (SRA)">
               <div class="partner-logo-box">
-                <img src="partners/students-representative-assembly-atbu.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/students-representative-assembly-atbu.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">SRA ATBU</span>
             </div>
@@ -327,56 +359,56 @@
           <div class="partners-slide" aria-hidden="true">
             <div class="partner-card" title="Nigeria Association of Computing Students (NACOS)">
               <div class="partner-logo-box">
-                <img src="partners/nigeria-association-of-computing-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/nigeria-association-of-computing-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NACOS</span>
             </div>
 
             <div class="partner-card" title="Nigerian Universities Engineering Students Association (NUESA)">
               <div class="partner-logo-box">
-                <img src="partners/nigerian-universities-engineering-students-association.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/nigerian-universities-engineering-students-association.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NUESA</span>
             </div>
 
             <div class="partner-card" title="National Association of Science Students (NASS)">
               <div class="partner-logo-box">
-                <img src="partners/national-association-of-science-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/national-association-of-science-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NASS</span>
             </div>
 
             <div class="partner-card" title="National Association of University Students Bauchi CMC (NAUS)">
               <div class="partner-logo-box">
-                <img src="partners/national-association-of-university-student-bauchi-cmc.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/national-association-of-university-student-bauchi-cmc.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">NAUS CMC</span>
             </div>
 
             <div class="partner-card" title="Association of Environmental Technology Students (AETS)">
               <div class="partner-logo-box">
-                <img src="partners/association-of-environmental-technology-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/association-of-environmental-technology-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">AETS</span>
             </div>
 
             <div class="partner-card" title="Association of Management Sciences Students (AMSS)">
               <div class="partner-logo-box">
-                <img src="partners/association-of-management-sciences-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/association-of-management-sciences-students.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">AMSS</span>
             </div>
 
             <div class="partner-card" title="Science and Technology Education Students Association (STESA)">
               <div class="partner-logo-box">
-                <img src="partners/science-and-technology-education-students-association.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/science-and-technology-education-students-association.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">STESA</span>
             </div>
 
             <div class="partner-card" title="Students Representative Assembly ATBU (SRA)">
               <div class="partner-logo-box">
-                <img src="partners/students-representative-assembly-atbu.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
+                <img src="assets/logos/students-representative-assembly-atbu.png" alt="" class="partner-logo" loading="eager" decoding="sync" />
               </div>
               <span class="partner-name">SRA ATBU</span>
             </div>
@@ -386,9 +418,7 @@
     </div>
   </section>
 
-  <!-- ========================================================================= -->
-  <!-- ABOUT US SECTION (Seamless Flow with Lemon Chiffon Background)            -->
-  <!-- ========================================================================= -->
+  <!-- Component: about.html -->
   <section class="about-section" id="about" aria-label="About ATBU Developers Club">
     <div class="about-container">
       
@@ -404,7 +434,7 @@
         <!-- Left Column (Asset): About Illustration -->
         <div class="about-asset-col">
           <img 
-            src="partners/about_image_real-removebg-preview.png" 
+            src="assets/media/about_image_real-removebg-preview.png" 
             alt="ATBU Developers Club educational technology, software development, and innovation doodle illustration" 
             class="about-illustration about-team-image" 
             loading="lazy" 
@@ -435,9 +465,7 @@
     </div>
   </section>
 
-  <!-- ========================================================================= -->
-  <!-- MEMBERSHIP & COMMUNITY SECTION (Alternating Story Blocks • Reference)     -->
-  <!-- ========================================================================= -->
+  <!-- Component: membership.html -->
   <section class="membership-section" id="membership" aria-label="Membership and Community">
     <div class="membership-container">
       
@@ -450,7 +478,7 @@
       <div class="membership-story-block story-block-1">
         <div class="story-asset-col">
           <img 
-            src="partners/tech-community-1.jpg" 
+            src="assets/media/tech-community-1.jpg" 
             alt="ATBU Developers Club student builders assembly — tech community 1" 
             class="story-image"
             loading="lazy" 
@@ -501,7 +529,7 @@
 
         <div class="story-asset-col">
           <img 
-            src="partners/tech-community-2.jpg" 
+            src="assets/media/tech-community-2.jpg" 
             alt="ATBU Developers Club active tech community developers — tech community 2" 
             class="story-image"
             loading="lazy" 
@@ -519,9 +547,7 @@
     </div>
   </section>
 
-  <!-- ========================================================================= -->
-  <!-- MEET THE FOUNDER SECTION (Reference Layout • Two-Tone Header & Polaroid) -->
-  <!-- ========================================================================= -->
+  <!-- Component: founder.html -->
   <section class="founder-section" id="founder" aria-label="Meet the Founder">
     <div class="founder-container">
       
@@ -548,7 +574,7 @@
             </div>
             <div class="founder-polaroid-card">
               <img 
-                src="partners/founder.jpg" 
+                src="assets/media/founder.jpg" 
                 alt="Sen. Muhammad Shehu Danbinta, Founder of ATBU Developers Club" 
                 class="founder-polaroid-img"
                 loading="eager" 
@@ -585,9 +611,7 @@
     </div>
   </section>
 
-  <!-- ========================================================================= -->
-  <!-- ACTIVITIES & PROGRAMS SLIDESHOW (Schedule VIII & XIV Driven)              -->
-  <!-- ========================================================================= -->
+  <!-- Component: activities.html -->
   <section class="activities-section" id="activities" aria-label="Activities and Programs">
     <div class="activities-container">
 
@@ -615,7 +639,7 @@
               </div>
             </div>
             <div class="slide-visual-col">
-              <img src="partners/hackathon-github-removebg-preview.png" alt="GitHub and hackathon collaboration mark" class="slide-illustration" />
+              <img src="assets/media/hackathon-github-removebg-preview.png" alt="GitHub and hackathon collaboration mark" class="slide-illustration" />
             </div>
           </div>
 
@@ -632,7 +656,7 @@
               </div>
             </div>
             <div class="slide-visual-col">
-              <img src="partners/lily-ai-removebg-preview.png" alt="Student developers participating in web and AI bootcamps" class="slide-illustration" loading="lazy" />
+              <img src="assets/media/lily-ai-removebg-preview.png" alt="Student developers participating in web and AI bootcamps" class="slide-illustration" loading="lazy" />
             </div>
           </div>
 
@@ -649,7 +673,7 @@
               </div>
             </div>
             <div class="slide-visual-col">
-              <img src="partners/cyber-security-removebg-preview.png" alt="Cybersecurity and interface design challenge illustration" class="slide-illustration" loading="lazy" />
+              <img src="assets/media/cyber-security-removebg-preview.png" alt="Cybersecurity and interface design challenge illustration" class="slide-illustration" loading="lazy" />
             </div>
           </div>
 
@@ -666,7 +690,7 @@
               </div>
             </div>
             <div class="slide-visual-col">
-              <img src="partners/bootcamp-removebg-preview.png" alt="ATBU Developers Club community outreach contributors" class="slide-illustration" loading="lazy" />
+              <img src="assets/media/bootcamp-removebg-preview.png" alt="ATBU Developers Club community outreach contributors" class="slide-illustration" loading="lazy" />
             </div>
           </div>
 
@@ -697,9 +721,7 @@
     </div>
   </section>
 
-  <!-- ========================================================================= -->
-  <!-- FAQ SECTION (Minimalist Serviceblocks Reference Architecture)             -->
-  <!-- ========================================================================= -->
+  <!-- Component: faq.html -->
   <section class="faq-section" id="faq" aria-label="Frequently Asked Questions">
     <div class="faq-container">
       
@@ -803,9 +825,7 @@
     </div>
   </section>
 
-  <!-- ========================================================================= -->
-  <!-- SITE FOOTER (Sleek Dark High-End Architecture • ServiceBlocks Reference) -->
-  <!-- ========================================================================= -->
+  <!-- Component: footer.html -->
   <footer class="site-footer" role="contentinfo" aria-label="Site Footer">
     <div class="footer-container">
       
@@ -832,46 +852,49 @@
           </div>
         </div>
 
-        <!-- Column 2: Tracks & Directorates -->
-        <div class="footer-col">
-          <h3 class="footer-col-title">Tracks &amp; Directorates</h3>
-          <ul class="footer-nav-list">
-            <li><a href="#activities" class="footer-link">Web Development</a></li>
-            <li><a href="#activities" class="footer-link">Mobile Engineering</a></li>
-            <li><a href="#activities" class="footer-link">Artificial Intelligence</a></li>
-            <li><a href="#activities" class="footer-link">Cybersecurity</a></li>
-            <li><a href="#activities" class="footer-link">UI/UX Product Design</a></li>
-          </ul>
-        </div>
+        <!-- Center Columns: Structured Navigation Links Group -->
+        <div class="footer-links-grid">
+          <!-- Column 2: Tracks & Directorates -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Tracks &amp; Directorates</h3>
+            <ul class="footer-nav-list">
+              <li><a href="#activities" class="footer-link">Web Development</a></li>
+              <li><a href="#activities" class="footer-link">Mobile Engineering</a></li>
+              <li><a href="#activities" class="footer-link">Artificial Intelligence</a></li>
+              <li><a href="#activities" class="footer-link">Cybersecurity</a></li>
+              <li><a href="#activities" class="footer-link">UI/UX Product Design</a></li>
+            </ul>
+          </div>
 
-        <!-- Column 3: Activities & Events -->
-        <div class="footer-col">
-          <h3 class="footer-col-title">Activities &amp; Events</h3>
-          <ul class="footer-nav-list">
-            <li><a href="#activities" class="footer-link">Annual Developers Summit</a></li>
-            <li><a href="#activities" class="footer-link">Student Hackathons</a></li>
-            <li><a href="#activities" class="footer-link">Technical Bootcamps</a></li>
-            <li><a href="#activities" class="footer-link">Open Source Week</a></li>
-            <li><a href="#activities" class="footer-link">Community Outreach</a></li>
-          </ul>
-        </div>
+          <!-- Column 3: Activities & Events -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Activities &amp; Events</h3>
+            <ul class="footer-nav-list">
+              <li><a href="#activities" class="footer-link">Annual Developers Summit</a></li>
+              <li><a href="#activities" class="footer-link">Student Hackathons</a></li>
+              <li><a href="#activities" class="footer-link">Technical Bootcamps</a></li>
+              <li><a href="#activities" class="footer-link">Open Source Week</a></li>
+              <li><a href="#activities" class="footer-link">Community Outreach</a></li>
+            </ul>
+          </div>
 
-        <!-- Column 4: Club & Governance -->
-        <div class="footer-col">
-          <h3 class="footer-col-title">Club &amp; Governance</h3>
-          <ul class="footer-nav-list">
-            <li><a href="#about" class="footer-link">About ATBUDEVS</a></li>
-            <li><a href="#founder" class="footer-link">Meet the Founder</a></li>
-            <li><a href="#membership" class="footer-link">Membership Guidelines</a></li>
-            <li><a href="CONSTITUTION.md" class="footer-link">Official Constitution</a></li>
-            <li><a href="#faq" class="footer-link">FAQs</a></li>
-          </ul>
+          <!-- Column 4: Club & Governance -->
+          <div class="footer-col">
+            <h3 class="footer-col-title">Club &amp; Governance</h3>
+            <ul class="footer-nav-list">
+              <li><a href="#about" class="footer-link">About ATBUDEVS</a></li>
+              <li><a href="#founder" class="footer-link">Meet the Founder</a></li>
+              <li><a href="#membership" class="footer-link">Membership Guidelines</a></li>
+              <li><a href="CONSTITUTION.md" class="footer-link">Official Constitution</a></li>
+              <li><a href="#faq" class="footer-link">FAQs</a></li>
+            </ul>
+          </div>
         </div>
 
         <!-- Rightmost Area: Visual Element / Decorative Asset -->
         <div class="footer-col footer-col-visual" aria-hidden="true">
           <img 
-            src="partners/footer-archway.png" 
+            src="assets/media/footer-archway.png" 
             alt="ATBUDEVS Architectural Portal" 
             class="footer-archway-graphic"
             width="214" 
@@ -887,7 +910,7 @@
         <div class="footer-logos-bar">
           <div class="footer-official-logos" aria-label="Official University and Club Insignia">
             <img 
-              src="atbu-removebg-preview.png" 
+              src="assets/logos/atbu-crest.png" 
               alt="ATBU Official University Crest" 
               class="footer-official-crest" 
               width="44" 
@@ -896,7 +919,7 @@
             />
             <span class="footer-logo-divider" aria-hidden="true"></span>
             <img 
-              src="partners/atbudevs-emblem.png" 
+              src="assets/logos/atbudevs-emblem.png" 
               alt="ATBUDEVS Official Emblem" 
               class="footer-official-emblem" 
               width="36" 
@@ -921,293 +944,11 @@
     </div>
   </footer>
 
-
-  <!-- Mobile Drawer Toggle Script (Vanilla JS, Zero Dependencies) -->
-  <script>
-    (function() {
-      const toggleBtn = document.getElementById('mobile-menu-toggle');
-      const closeBtn = document.getElementById('mobile-drawer-close');
-      const backdrop = document.getElementById('mobile-drawer-backdrop');
-      const drawer = document.getElementById('mobile-drawer');
-      const navLinks = document.querySelectorAll('.mobile-nav-link, .mobile-drawer-bottom a');
-
-      function openDrawer() {
-        drawer.classList.add('is-open');
-        toggleBtn.setAttribute('aria-expanded', 'true');
-        drawer.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeDrawer() {
-        drawer.classList.remove('is-open');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-        drawer.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      }
-
-      if (toggleBtn) toggleBtn.addEventListener('click', openDrawer);
-      if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
-      if (backdrop) backdrop.addEventListener('click', closeDrawer);
-
-      navLinks.forEach(link => {
-        link.addEventListener('click', closeDrawer);
-      });
-
-      window.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
-          closeDrawer();
-        }
-      });
-    })();
-  </script>
-
-  <!-- Scroll Reveal & Card Hover Sheen (Vanilla JS, Zero Dependencies) -->
-  <script>
-    (function() {
-      // Intersection Observer for scroll reveal
-      if ('IntersectionObserver' in window) {
-        const revealElements = document.querySelectorAll('[data-scroll-reveal]');
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const delay = Number(entry.target.dataset.revealDelay) || 0;
-              setTimeout(() => {
-                entry.target.classList.add('is-revealed');
-              }, delay);
-              observer.unobserve(entry.target);
-            }
-          });
-        }, {
-          threshold: 0.12,
-          rootMargin: '0px 0px -30px 0px'
-        });
-
-        revealElements.forEach((el, index) => {
-          el.dataset.revealDelay = (index % 4) * 90;
-          observer.observe(el);
-        });
-      } else {
-        document.querySelectorAll('[data-scroll-reveal]').forEach(el => {
-          el.classList.add('is-revealed');
-        });
-      }
-
-      // Cursor hover gradient sheen across membership cards
-      const cards = document.querySelectorAll('.membership-card');
-      cards.forEach(card => {
-        card.addEventListener('mousemove', function(e) {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          card.style.setProperty('--mouse-x', `${x}px`);
-          card.style.setProperty('--mouse-y', `${y}px`);
-        });
-      });
-    })();
-  </script>
-
-  <!-- FAQ Accordion Interactive Controller -->
-  <script>
-    (function() {
-      const faqItems = document.querySelectorAll('.faq-item');
-      if (!faqItems.length) return;
-
-      faqItems.forEach((item) => {
-        const btn = item.querySelector('.faq-question-btn');
-        if (!btn) return;
-
-        btn.addEventListener('click', () => {
-          const isOpen = item.classList.contains('is-open');
-
-          // Smooth accordion UX: close other items
-          faqItems.forEach((other) => {
-            if (other !== item && other.classList.contains('is-open')) {
-              other.classList.remove('is-open');
-              const otherBtn = other.querySelector('.faq-question-btn');
-              if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-            }
-          });
-
-          if (isOpen) {
-            item.classList.remove('is-open');
-            btn.setAttribute('aria-expanded', 'false');
-          } else {
-            item.classList.add('is-open');
-            btn.setAttribute('aria-expanded', 'true');
-          }
-        });
-      });
-    })();
-  </script>
-
-  <!-- Activities & Programs Slideshow Controller (Debounced & Touch-Hardened) -->
-  <script>
-    (function() {
-      const slides = document.querySelectorAll('.activity-slide');
-      const dots = document.querySelectorAll('.activities-dots .dot-btn');
-      const prevBtn = document.getElementById('activities-prev');
-      const nextBtn = document.getElementById('activities-next');
-      const carousel = document.getElementById('activities-carousel');
-
-      if (!slides.length) return;
-
-      let currentIndex = 0;
-      let timer = null;
-      let isBusy = false;
-      let touchStartX = 0;
-      let touchStartY = 0;
-      let touchEndX = 0;
-      let touchEndY = 0;
-
-      function goToSlide(index) {
-        if (isBusy) return;
-        isBusy = true;
-        setTimeout(() => { isBusy = false; }, 280);
-
-        // Pause any video in current slide before switching
-        const currentVideo = slides[currentIndex].querySelector('video');
-        if (currentVideo) {
-          try { currentVideo.pause(); } catch (e) {}
-        }
-
-        slides[currentIndex].classList.remove('is-active');
-        dots[currentIndex].classList.remove('is-active');
-        dots[currentIndex].setAttribute('aria-selected', 'false');
-
-        currentIndex = (index + slides.length) % slides.length;
-
-        slides[currentIndex].classList.add('is-active');
-        dots[currentIndex].classList.add('is-active');
-        dots[currentIndex].setAttribute('aria-selected', 'true');
-
-        // Play video in new active slide
-        const nextVideo = slides[currentIndex].querySelector('video');
-        if (nextVideo) {
-          try {
-            nextVideo.currentTime = 0;
-            const playPromise = nextVideo.play();
-            if (playPromise !== undefined) {
-              playPromise.catch(() => {});
-            }
-          } catch (e) {}
-        }
-      }
-
-      function nextSlide() {
-        goToSlide(currentIndex + 1);
-      }
-
-      function prevSlide() {
-        goToSlide(currentIndex - 1);
-      }
-
-      if (nextBtn) {
-        nextBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          nextSlide();
-          resetTimer();
-        });
-      }
-
-      if (prevBtn) {
-        prevBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          prevSlide();
-          resetTimer();
-        });
-      }
-
-      dots.forEach((dot, idx) => {
-        dot.addEventListener('click', (e) => {
-          e.preventDefault();
-          goToSlide(idx);
-          resetTimer();
-        });
-      });
-
-      // Keyboard navigation when carousel has focus
-      if (carousel) {
-        carousel.addEventListener('keydown', (e) => {
-          if (e.key === 'ArrowLeft') {
-            prevSlide();
-            resetTimer();
-          } else if (e.key === 'ArrowRight') {
-            nextSlide();
-            resetTimer();
-          }
-        });
-
-        // Touch swipe gestures with direction validation & button exclusion
-        carousel.addEventListener('touchstart', (e) => {
-          if (e.target.closest('.activities-controls')) return;
-          clearInterval(timer);
-          if (e.changedTouches && e.changedTouches[0]) {
-            touchStartX = e.changedTouches[0].screenX;
-            touchStartY = e.changedTouches[0].screenY;
-          }
-        }, { passive: true });
-
-        carousel.addEventListener('touchend', (e) => {
-          if (e.target.closest('.activities-controls')) return;
-          if (e.changedTouches && e.changedTouches[0]) {
-            touchEndX = e.changedTouches[0].screenX;
-            touchEndY = e.changedTouches[0].screenY;
-            handleSwipe();
-          }
-          resetTimer();
-        }, { passive: true });
-
-        carousel.addEventListener('mouseenter', () => clearInterval(timer));
-        carousel.addEventListener('mouseleave', () => resetTimer());
-      }
-
-      function handleSwipe() {
-        const dx = touchEndX - touchStartX;
-        const dy = touchEndY - touchStartY;
-        // Verify horizontal intent: dx must dominate dy by 1.3x
-        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.3) {
-          if (dx < 0) {
-            nextSlide();
-          } else {
-            prevSlide();
-          }
-          resetTimer();
-        }
-      }
-
-      function startTimer() {
-        timer = setInterval(nextSlide, 7000);
-      }
-
-      function resetTimer() {
-        clearInterval(timer);
-        startTimer();
-      }
-
-      startTimer();
-
-      // Auto-start video on initial page load with fallback on first touch/interaction
-      const hackathonVideo = document.getElementById('hackathon-video-player');
-      if (hackathonVideo) {
-        hackathonVideo.muted = true;
-        hackathonVideo.defaultMuted = true;
-        const playPromise = hackathonVideo.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            const resumeAutoplay = () => {
-              hackathonVideo.play().catch(() => {});
-              window.removeEventListener('click', resumeAutoplay);
-              window.removeEventListener('touchstart', resumeAutoplay);
-              window.removeEventListener('scroll', resumeAutoplay);
-            };
-            window.addEventListener('click', resumeAutoplay, { once: true, passive: true });
-            window.addEventListener('touchstart', resumeAutoplay, { once: true, passive: true });
-            window.addEventListener('scroll', resumeAutoplay, { once: true, passive: true });
-          });
-        }
-      }
-    })();
-  </script>
-
+  <!-- Modular Production Client Scripts -->
+  <script src="scripts/drawer.js" defer></script>
+  <script src="scripts/scroll-reveal.js" defer></script>
+  <script src="scripts/faq.js" defer></script>
+  <script src="scripts/carousel.js" defer></script>
+  <script src="scripts/main.js" defer></script>
 </body>
 </html>

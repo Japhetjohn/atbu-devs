@@ -4,8 +4,10 @@
   "description": "Abubakar Tafawa Balewa University Developers Club (ATBUDEVS) Official Website",
   "main": "server.js",
   "scripts": {
+    "build": "node build.js",
     "start": "node server.js",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "test": "node build.js"
   },
   "keywords": [
     "atbu",

@@ -1,0 +1,33 @@
+/* ==========================================================================
+   ATBU DEVELOPERS CLUB (ATBUDEVS) — CENTRALIZED CSS DESIGN TOKENS
+   Official Brand Palette (Mandatory — Schedule II of Club Constitution)
+   ========================================================================== */
+
+:root {
+  /* Official Brand Palette — Mandatory (Do Not Modify) */
+  --color-peach-glow: #FFC09F;
+  --color-light-gold: #FFEE93;
+  --color-lemon-chiffon: #FCF5C7;
+  --color-light-blue: #A0CED9;
+  --color-celadon: #ADF7B6;
+
+  /* Neutrals & Accessible Canvas */
+  --color-white: #ffffff;
+  --color-warm-cream: #FAF8F5;
+  --color-text-body: rgba(255, 255, 255, 0.85);
+  --color-text-muted: rgba(255, 255, 255, 0.65);
+  --color-text-subtle: rgba(255, 255, 255, 0.50);
+  --color-bg-dark: #080c14;
+  --color-border: rgba(255, 255, 255, 0.12);
+
+  /* Semantic UI Tokens */
+  --color-primary-cta: var(--color-celadon);
+  --color-primary-cta-hover: var(--color-light-gold);
+  --color-primary-cta-text: #06130b;
+
+  --color-link: var(--color-light-blue);
+  --color-link-hover: var(--color-peach-glow);
+
+  /* Typography Stack — Modern Editorial Sans-Serif (Inter Tight + Manrope) */
+  --font-family: 'Inter Tight', 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}

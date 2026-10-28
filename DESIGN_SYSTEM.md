@@ -36,9 +36,20 @@ Recreating the modern, clean, editorial header treatment:
   - `FAQ` (`#faq`) — Clear answers on eligibility, tracks, and academic balance.
 - **Header Actions Group**:
   - **Pill CTA Button**: `Explore Membership →` in Celadon (`#ADF7B6`), dark text (`#06130B`), `1.5px solid #06130b` border, and offset stylized drop shadow (`2px 2px 0px #06130b`), shifting on hover to Light Gold (`#FFEE93`) with a rightward arrow nudge.
-- **Mobile Responsive Drawer**:
-  - Accessible hamburger button on screens ≤ 900px (`aria-expanded`, `aria-controls`).
-  - Slide-in panel with active navigation links matching desktop, comfortable touch targets, and full-width `Explore Membership` button.
+- **Mobile Responsive Drawer & Hamburger Toggle**:
+  - **Asymmetrical Modern Hamburger Toggle** on screens ≤ 900px (`aria-expanded`, `aria-controls`):
+    - Borderless, floating toggle button (`background: transparent; border: none; padding: 8px 4px;`) balancing directly on the header backdrop without a circular container.
+    - Three left-aligned pill bars:
+      * Top Bar: Short pill (`11px`, 50% width).
+      * Middle Bar: Full width pill (`22px`, 100% width).
+      * Bottom Bar: Short pill (`11px`, 50% width).
+    - Smooth hover interaction (subtle organic stretch to 16px and Celadon glow).
+    - Interactive 60fps morphing animation when opened into a 45-degree close cross.
+  - **Sleek Slide-in Drawer Panel**:
+    - Deep charcoal navy backdrop matching hero tone (`#080C14`), backdrop blur overlay (`backdrop-filter: blur(8px)`).
+    - Accessible close button with 90-degree rotate hover transition.
+    - Navigation links with monospaced Celadon numeral badges (`01`, `02`, `03`, `04`, `05`).
+    - Full-width `Explore Membership` pill CTA button and institutional contact details at the base.
 
 ---
 
@@ -220,9 +231,9 @@ Directly following the Meet the Founder block, an editorial interactive slidesho
 
 Directly succeeding the Activities section, an ultra-clean, minimalist FAQ accordion provides immediate clarity on club operations, governance, and tracks inspired by the Serviceblocks editorial layout:
 - **Visual Presentation & Background**:
-  - Background: Pristine pure white (`#FFFFFF`) background creating a crisp, airy presentation that puts pure focus on typography and whitespace.
-  - Borderless List Architecture: Strictly NO cards, NO drop shadows, NO rounded card shells, and NO container frames. Clean horizontal rows separated solely by subtle hairline borders (`border-b: 1px solid rgba(15, 23, 42, 0.12)`).
-  - Editorial Typography: Left-aligned within a centered `max-w-4xl` (`960px`) container. Two-tone headline pairing regular/light weight leading text with extra-bold emphasis: `Everything to know <span class="faq-heading-bold">before you join</span>` (`font-weight: 350` and `font-weight: 850`).
+  - Background: Warm off-white / light cream canvas (`var(--color-warm-cream)`, `#FAF8F5`) creating a crisp, airy presentation that puts pure focus on typography and whitespace while establishing a subtle, elegant contrast from the Lemon Chiffon Activities section above.
+  - Borderless List Architecture: Strictly NO cards, NO drop shadows, NO rounded card shells, and NO container frames. Clean horizontal rows separated solely by subtle hairline borders (`border-b: 1px solid rgba(15, 23, 42, 0.10)`).
+  - Editorial Typography: Left-aligned within a centered `max-w-4xl` (`960px`) container. Two-tone headline pairing regular/light weight leading text in deep charcoal (`#0F172A`, `font-weight: 350`) with extra-bold emphasis (`#080C14`, `font-weight: 850`).
 - **Constitutional FAQ Items**:
   1. *Who is eligible to join the ATBU Developers Club?* — Membership is open to all registered students of Abubakar Tafawa Balewa University across every department, faculty, and level. Whether you are writing your first line of code or already shipping applications, there are no prerequisites to join.
   2. *What specific tracks and tech stacks can I focus on?* — We operate active technical directorates covering Full-Stack Web Development, Mobile App Engineering (iOS/Android), Artificial Intelligence & Machine Learning, UI/UX Product Design, and Cybersecurity.
@@ -231,7 +242,9 @@ Directly succeeding the Activities section, an ultra-clean, minimalist FAQ accor
   5. *How are collaborative projects and source code managed?* — Projects built within the club are maintained as collaborative and open-source software, ensuring student builders receive full moral recognition and portfolio assets for every line of code they ship.
 - **Interactive Accordion Behavior**:
   - Single-expansion UX: Opening an item smoothly collapses previously open items to maintain a compact, easily scannable page.
-  - Active / Open State: Highlight the active question text and chevron in the brand's emerald green tone (`#0d7653`, 5.2:1 contrast ratio against `#FFFFFF`, passing WCAG AAA).
+  - Inactive State: Clean, readable dark charcoal (`#1E293B`, 13.8:1 contrast ratio against `#FAF8F5`).
+  - Active / Open State: Highlight the active question text and chevron in primary brand emerald green tone (`#0D7653`, 5.31:1 contrast ratio against `#FAF8F5`, passing WCAG AAA).
+  - Answers Body Copy: Soft, highly readable muted slate copy (`#475569`, 7.15:1 contrast against `#FAF8F5`).
   - Minimalist SVG down-chevron arrow (`⌄`) on the far right that smoothly rotates 180 degrees (`transform: rotate(180deg)`) upon expansion.
   - CSS Grid transition (`grid-template-rows: 0fr` to `1fr`) delivering silky-smooth 60fps expansion without JavaScript height computations.
   - Full keyboard accessibility and ARIA semantics (`aria-expanded`, `aria-controls`, `role="region"`).
@@ -240,8 +253,8 @@ Directly succeeding the Activities section, an ultra-clean, minimalist FAQ accor
 
 ## 11. Site Footer Architecture (Sleek Dark High-End Architecture • ServiceBlocks Reference Style)
 
-Directly following the pure white FAQ section, the footer establishes a solid dark foundation matching the hero dark tone:
-- **Hairline Division**: `border-top: 1px solid rgba(255, 255, 255, 0.08)` establishing subtle separation from the white FAQ section above, and `border-top: 1px solid rgba(255, 255, 255, 0.10)` separating the grid from the bottom copyright bar.
+Directly following the warm cream FAQ section, the footer establishes a solid dark foundation matching the hero dark tone:
+- **Hairline Division**: `border-top: 1px solid rgba(255, 255, 255, 0.08)` establishing subtle separation from the cream FAQ section above, and `border-top: 1px solid rgba(255, 255, 255, 0.10)` separating the grid from the bottom copyright bar.
 - **5-Column Multi-Column Grid (`max-w-7xl`, `1280px`)**:
   1. **Brand & Contact Info (Left Side - Wider Column)**:
      - Wordmark: `ATBUDEVS` in bold clean editorial typography (`font-weight: 850; letter-spacing: -0.04em; color: #FFFFFF`).
