@@ -102,3 +102,52 @@ Directly beneath the hero, a continuous, auto-scrolling partner logo marquee hig
   - Edge fade masks: CSS `mask-image` gradient combined with fallback gradient overlays in `var(--color-lemon-chiffon)` for smooth fade-in / fade-out at viewport edges.
   - Accessibility: First set is fully exposed to screen readers with descriptive `alt` tags and `title` tooltips; duplicates marked `aria-hidden="true"`; `prefers-reduced-motion` provides smooth manual horizontal scrolling.
 
+---
+
+## 6. "About Us" Section Architecture (Punchy & Concise Revision)
+
+Directly continuing from the Partners carousel, the About Us section maintains an unbroken visual canvas on the brand Lemon Chiffon (`#FCF5C7`) surface:
+- **Layout & Continuous Canvas**:
+  - Background: Same Lemon Chiffon (`#FCF5C7`) tone with zero borders, dividers, or background cuts between Partners and About Us.
+  - Container: Max width `1140px` (max-w-6xl) centered layout with comfortable vertical breathing room (`padding: 1.75rem 0 5.5rem 0`).
+- **Centered Top Intro Block**:
+  - Eyebrow: `*About Us*` in italicized, muted secondary text (`#4a5568`, `font-size: 1.05rem`, `font-weight: 400`).
+  - Main Headline: `"ATBUDEVS bridges the gap between classroom theory and production-grade software."` styled in light hero typography (`font-weight: 350`, `font-size: clamp(2rem, 3.8vw, 3.15rem)`, `line-height: 1.18`, crisp `#080C14` dark text).
+- **2-Column Responsive Story Block**:
+  - Structure: 2-column balanced grid on desktop (`1fr 1fr`, `gap: 3.5rem`, `align-items: center`), single-column vertical stack on mobile (`≤ 860px`).
+  - Left Column (Asset): 2D educational tech illustration (`partners/about_image_real-removebg-preview.png`), transparent background, responsive aspect ratio `1 / 1` (`max-width: 440px` on desktop, `360px` on tablet, `290px` on mobile), naturally blending directly on the Lemon Chiffon canvas.
+  - Right Column (Headline & Concise Narrative):
+    - Subheading: Official Motto — `"Learn. Build. Impact."` (`font-weight: 350`, `font-size: clamp(1.85rem, 3.2vw, 2.5rem)`).
+    - Narrative: A single, cohesive, punchy sentence: *"Build production-grade software across Web, Mobile, AI/ML, UI/UX, and Cybersecurity by contributing to live open-source repositories alongside fellow student developers, with direct industry access through high-stakes hackathons, technical bootcamps, and career mentorship."*
+    - Pill CTA Button: `"Explore Membership →"` in Celadon (`#ADF7B6`), dark text (`#06130B`), `1.5px solid #06130b` border, and signature offset drop shadow (`2px 2px 0px #06130b`), routing smoothly to `#membership`.
+
+---
+
+## 7. "Membership" Section Architecture (Article III Driven • High-Contrast Showcase)
+
+Directly beneath the About Us section, a high-contrast dark section establishes immediate authority and focus:
+- **Visual Contrast & Palette**:
+  - Base: Deep Charcoal / Royal Navy background (`#080C14`) accented with subtle ambient radial gradients in Light Blue (`rgba(160, 206, 217, 0.05)`) and Celadon (`rgba(173, 247, 182, 0.06)`).
+  - Spacing: Generous breathing space (`padding: 6rem 0 6.5rem 0` / ~96px–104px vertical padding) within a constrained `1200px` container.
+- **Section Introduction**:
+  - Eyebrow: `MEMBERSHIP • ARTICLE III` in uppercase bold Celadon (`#ADF7B6`, `font-size: 0.85rem`, `letter-spacing: 0.12em`).
+  - Section Headline: `"Open to every student builder. Driven by excellence."` (`font-weight: 350`, `color: #FFFFFF`, `line-height: 1.15`).
+  - Subtitle: `"Registration is open to all registered students of Abubakar Tafawa Balewa University across every department and level."` (`color: rgba(255, 255, 255, 0.72)`).
+- **2-Column Showcase**:
+  - Left Column (Asset Frame):
+    - Photo: `partners/membership.jpg` (official members assembly).
+    - Card Frame: `rounded-2xl` border (`border: 1px solid rgba(255, 255, 255, 0.1)`), deep drop shadow (`0 25px 60px -15px rgba(0, 0, 0, 0.75)`), ambient hover glow (`0 0 50px rgba(173, 247, 182, 0.14)`), and smooth hover scale (`1.02`).
+    - Floating Badge: Frosted glass badge at the bottom of the photo displaying `"General Assembly • Community Members"`.
+  - Right Column (Pillars & Rights Cards):
+    - 3 semi-transparent frosted cards (`bg-white/5 border border-white/10 p-5 rounded-xl`):
+      1. **Universal Access (Section 1):** Open to all students without barriers—from first-time coders to advanced engineers.
+      2. **Builder Rights (Section 5):** Direct access to technical bootcamps, hackathons, open-source teams, and mentorship pipelines.
+      3. **Digital Credentials (Section 8):** Official Club ID, verified digital credentials, and a unique Membership Identification Number.
+    - Hover Interaction: Dynamic cursor-following gradient sheen and Celadon border highlight (`border-color: rgba(173, 247, 182, 0.45)`).
+    - Section CTA: `"Join ATBUDEVS Today →"` in Celadon (`#ADF7B6`), dark text (`#06130B`), and signature tactile shadow.
+- **Animation**:
+  - Staggered scroll-reveal animation with Intersection Observer.
+  - Interactive cursor hover sheen across membership cards.
+
+
+
