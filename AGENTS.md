@@ -20,9 +20,9 @@ All AI coding assistants, developers, and tools working on this codebase must st
 
 - **Typeface**: `Inter Tight` (primary) / `Manrope` (fallback).
 - **Header & Navigation (Reference-Inspired)**:
-  - Two-tier brand wordmark: `ATBUDEVS` (`font-weight: 850; letter-spacing: -0.04em`, matching headline emphasis) + `DEVELOPERS CLUB` alongside official seal.
+  - Brand wordmark: `atbudevs` in solid **White** (`#FFFFFF`, `font-weight: 850; letter-spacing: -0.04em`, matching the font weight and tracking of the headline emphasis) + `Developers Club` in Lemon Chiffon alongside the official seal.
   - Constitution-informed links: `About` (`#about`), `Activities` (`#activities`), `Learning` (`#learning`), `Community` (`#community`), `Partners` (`#partners`), `Constitution` (`CONSTITUTION.md`).
-  - Dual action group: Celadon pill button (`Join Club →`) with offset shadow + circular `?` charter info button.
+  - Dual action group: Celadon pill button (`Get in Touch →`) with offset shadow + circular `?` charter info button.
   - Mobile drawer with accessible hamburger toggle (`≤900px`).
 - **Hero Composition**:
   - Headline: Contrast between Light 300 opening line in white, and ExtraBold 850 emphasized phrase in Peach Glow (`#FFC09F`).

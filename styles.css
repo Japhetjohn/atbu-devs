@@ -52,6 +52,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -60,11 +61,12 @@ body {
   overflow-x: hidden;
 }
 
-/* On standard desktop viewports, lock vertical overflow for true single-screen hero */
+/* On standard desktop viewports, hero is single-screen height, with smooth vertical scrolling to content below */
 @media (min-width: 1025px) {
   html, body {
-    height: 100%;
-    overflow: hidden;
+    min-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 
@@ -152,26 +154,21 @@ a {
 
 .brand-title {
   font-family: var(--font-family);
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   font-weight: 850;
   letter-spacing: -0.04em;
   color: var(--color-white);
-  line-height: 1.08;
-}
-
-.brand-accent {
-  color: var(--color-peach-glow);
-  font-weight: 850;
+  line-height: 1;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
 }
 
 .brand-subtitle {
   font-family: var(--font-family);
   font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   color: var(--color-lemon-chiffon);
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
 /* Desktop Navigation Links */
@@ -600,6 +597,143 @@ a {
 }
 
 /* --------------------------------------------------------------------------
+   PARTNERS / POWERED BY SECTION & CONTINUOUS MARQUEE CAROUSEL
+   -------------------------------------------------------------------------- */
+.partners-section {
+  position: relative;
+  background-color: var(--color-bg-dark);
+  padding: 3.25rem 0 3.75rem 0;
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  z-index: 10;
+}
+
+.partners-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centered Label Above Carousel */
+.partners-label {
+  font-family: var(--font-family);
+  font-size: 0.825rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  text-align: center;
+  margin-bottom: 2rem;
+  user-select: none;
+}
+
+/* Carousel Outer Mask Container */
+.partners-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0.5rem 0;
+  
+  /* Modern CSS gradient fade mask */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+/* Fallback / Reinforcing Edge Fade Overlays */
+.partners-carousel::before,
+.partners-carousel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 90px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.partners-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-bg-dark) 0%, rgba(8, 12, 20, 0) 100%);
+}
+
+.partners-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-bg-dark) 0%, rgba(8, 12, 20, 0) 100%);
+}
+
+/* Continuous Marquee Track */
+.partners-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: partnersMarqueeScroll 38s linear infinite;
+}
+
+/* Individual Slide Group with Uniform Gap & Right Offset for Gapless Loop */
+.partners-slide {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  padding-right: 3.5rem;
+  flex-shrink: 0;
+}
+
+/* Partner Logo Elements */
+.partner-logo {
+  height: 38px;
+  max-height: 38px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  opacity: 0.75;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+  transition: opacity 0.25s ease, filter 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Hover Interactivity: Pause Marquee & Highlight Logo */
+.partners-carousel:hover .partners-track,
+.partners-track:hover {
+  animation-play-state: paused;
+}
+
+.partner-logo:hover {
+  opacity: 1;
+  transform: translateY(-2px) scale(1.06);
+  filter: drop-shadow(0 4px 14px rgba(173, 247, 182, 0.35));
+}
+
+/* Linear Infinite Translation */
+@keyframes partnersMarqueeScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* --------------------------------------------------------------------------
    RESPONSIVE DESIGN RULES (Tablet & Mobile Header Adjustments)
    -------------------------------------------------------------------------- */
 @media (max-width: 1200px) and (min-width: 901px) {
@@ -745,6 +879,36 @@ a {
     width: 16px;
     height: 16px;
   }
+
+  /* Responsive Partners Section for Tablets */
+  .partners-section {
+    padding: 2.25rem 0 2.75rem 0;
+  }
+
+  .partners-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  .partners-slide {
+    gap: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .partner-logo {
+    height: 32px;
+    max-height: 32px;
+  }
+
+  .partners-carousel::before,
+  .partners-carousel::after {
+    width: 45px;
+  }
+
+  .partners-track {
+    animation-duration: 28s;
+  }
 }
 
 @media (max-width: 480px) {
@@ -793,6 +957,36 @@ a {
     width: 36px;
     height: 36px;
   }
+
+  /* Responsive Partners Section for Mobile Phones */
+  .partners-section {
+    padding: 1.75rem 0 2.25rem 0;
+  }
+
+  .partners-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.09em;
+    margin-bottom: 1.25rem;
+  }
+
+  .partners-slide {
+    gap: 2rem;
+    padding-right: 2rem;
+  }
+
+  .partner-logo {
+    height: 28px;
+    max-height: 28px;
+  }
+
+  .partners-carousel::before,
+  .partners-carousel::after {
+    width: 30px;
+  }
+
+  .partners-track {
+    animation-duration: 24s;
+  }
 }
 
 /* Accessibility: Respect Reduced Motion Preferences */
@@ -801,5 +995,14 @@ a {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .partners-carousel {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .partners-track {
+    animation: none !important;
   }
 }
