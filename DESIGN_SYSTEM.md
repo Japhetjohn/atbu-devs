@@ -173,6 +173,47 @@ Directly beneath the Membership & Community section, a bright, modern editorial 
   - Hierarchy: `[The Founder Header] → [Polaroid Image Centered] → [Bio Narrative] → [Name & Title] → [Connect CTA]`.
   - Full-width touch-friendly hit targets (`min-height: 46px`).
 
+---
+
+## 9. "Activities & Programs" Slideshow Section Architecture (Schedule VIII & XIV Driven)
+
+Directly following the Meet the Founder block, an editorial interactive slideshow showcases the club's flagship events and calendar:
+- **Visual Presentation & Background**:
+  - Background: Brand **Lemon Chiffon** (`var(--color-lemon-chiffon)` / `#FCF5C7`) solid, clean, airy canvas.
+  - Borderless & Zero-Card Layout: Strictly NO card shells, NO boxed tiles, NO frosted glass containers, NO emojis, and NO markdown horizontal dividers (`---`).
+  - Breathing Space: Generous vertical padding (`6.5rem 0 7.5rem 0` on desktop, `3.5rem 0 4rem 0` on mobile).
+- **Section Header**:
+  - Eyebrow: *Programs & Impact* (italicized/uppercase muted text `#6b7280`).
+  - Main Headline (Slim Hero Font Style): `"Hands-on programs engineered for continuous growth."` in `var(--font-family)`, `font-weight: 350; letter-spacing: -0.035em; color: var(--color-bg-dark)`.
+  - Subtitle: `"From semester-long bootcamps to our flagship summit, our calendar is built around practical engineering, teamwork, and real-world deployment."`
+- **4 Official Program Slides (Constitution Schedule VIII & XIV)**:
+  1. **The Developers Summit & Hackathon** (ANNUAL FLAGSHIP):
+     - Description: Landmark gathering uniting student innovators, industry leaders, and alumni in multi-day competitive hackathons.
+     - Focus Tags: Technical Keynotes, Product Demos, Competitive Hackathons.
+     - Asset: `partners/slide-summit.jpg`.
+  2. **Intensive Web, Mobile & AI Bootcamps** (SEMESTER 1 TECHNICAL TRACKS):
+     - Description: Structured, mentor-led engineering tracks covering web stacks, cross-platform mobile apps, and machine learning pipelines.
+     - Focus Tags: Full-Stack Web, Mobile Engineering, Practical AI/ML.
+     - Asset: `partners/slide-bootcamps.jpg`.
+  3. **Cybersecurity CTFs & UI/UX Design Challenges** (SPECIALIZED SESSIONS):
+     - Description: Interactive security workshops featuring Capture-The-Flag challenges alongside human-centered product design sprints.
+     - Focus Tags: Ethical Hacking, Interface Design, Security Audits.
+     - Asset: `partners/slide-cybersecurity.jpg`.
+  4. **Open Source Week & Digital Literacy Outreach** (COMMUNITY & IMPACT):
+     - Description: Dedicated community sessions focused on public repo contributions, paired code reviews, and community digital literacy outreach.
+     - Focus Tags: Git Collaboration, Open Source Contributions, Community Impact.
+     - Asset: `partners/slide-opensource.jpg`.
+- **Interactive Controls & Mechanics**:
+  - Chevron buttons (left/right) with offset retro shadow and hover state (`var(--color-celadon)`).
+  - Quiet pagination dots with elongated pill indicator for active slide.
+  - Touch-friendly swipe gestures on mobile devices (`touchstart`, `touchend`).
+  - Keyboard arrow navigation when focused (`ArrowLeft`, `ArrowRight`).
+  - Auto-advance (6.5s) paused during cursor hover.
+- **Mobile Responsiveness (`< 768px`)**:
+  - Converts from 50/50 2-column desktop grid to single column with visual asset displayed on top (`order: -1`).
+  - Generous touch targets and clean legible typography.
+
+
 
 
 
