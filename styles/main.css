@@ -955,8 +955,8 @@ a {
   font-family: var(--font-family);
   font-style: italic;
   font-size: 1.05rem;
-  font-weight: 400;
-  color: #4a5568; /* Muted secondary text color */
+  font-weight: 600;
+  color: var(--color-blue-dark, #136F84); /* Brand Blue accent on white canvas */
   margin-bottom: 0.85rem;
   letter-spacing: -0.01em;
 }
@@ -1151,8 +1151,13 @@ a {
   font-weight: 850; /* Bold heading style matching hero/partners */
   line-height: 1.1;
   letter-spacing: -0.04em;
-  color: var(--color-bg-dark); /* Crisp dark tone #080C14 */
+  color: var(--color-peach-dark, #C2542D); /* Warm Peach Glow brand accent on white canvas */
   margin: 0;
+}
+
+.membership-heading-bold {
+  color: var(--color-peach-dark, #C2542D);
+  font-weight: 850;
 }
 
 /* Alternating 2-Column Story Blocks */
@@ -1578,10 +1583,10 @@ a {
   font-family: var(--font-family);
   font-size: 0.95rem;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #6b7280;
+  color: var(--color-blue-dark, #136F84); /* Brand Blue accent on white canvas */
   margin: 0 0 0.85rem 0;
 }
 

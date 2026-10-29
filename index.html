@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles.css?v=1793294788931" />
+  <link rel="stylesheet" href="styles/main.css?v=1793294788931" />
 </head>
 <body>
 
@@ -49,15 +49,15 @@
       <nav class="hero-nav" id="hero-nav" aria-label="Main Navigation">
         <a href="#about" class="nav-item">About</a>
         <a href="#partners" class="nav-item">Partners</a>
-        <a href="#membership" class="nav-item">Membership</a>
+        <a href="#community" class="nav-item">Community</a>
         <a href="#activities" class="nav-item">Activities</a>
         <a href="#faq" class="nav-item">FAQ</a>
       </nav>
 
       <!-- Right Action Group (Pill CTA) -->
       <div class="header-actions">
-        <a href="#membership" class="header-cta-pill desktop-header-cta" aria-label="Explore Membership">
-          <span>Explore Membership</span>
+        <a href="#community" class="header-cta-pill desktop-header-cta" aria-label="Explore Community">
+          <span>Explore Community</span>
           <svg class="header-cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
@@ -98,15 +98,15 @@
         <nav class="mobile-drawer-nav" aria-label="Mobile Navigation">
           <a href="#about" class="mobile-nav-link">About</a>
           <a href="#partners" class="mobile-nav-link">Partners</a>
-          <a href="#membership" class="mobile-nav-link">Membership</a>
+          <a href="#community" class="mobile-nav-link">Community</a>
           <a href="#activities" class="mobile-nav-link">Activities</a>
           <a href="#faq" class="mobile-nav-link">FAQ</a>
         </nav>
 
         <div class="mobile-drawer-bottom">
           <div class="mobile-drawer-cta-wrap">
-            <a href="#membership" class="drawer-cta-pill" aria-label="Explore Membership">
-              <span>Explore Membership</span>
+            <a href="#community" class="drawer-cta-pill" aria-label="Explore Community">
+              <span>Explore Community</span>
               <svg class="header-cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -434,8 +434,8 @@
           </p>
 
           <div class="about-action">
-            <a href="#membership" class="about-cta-pill" aria-label="Explore Membership">
-              <span>Explore Membership</span>
+            <a href="#community" class="about-cta-pill" aria-label="Explore Community">
+              <span>Explore Community</span>
               <svg class="about-cta-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -450,50 +450,17 @@
   </section>
 
   <!-- Component: membership.html -->
-  <section class="membership-section" id="membership" aria-label="Membership and Community">
+  <section class="membership-section community-section" id="community" aria-label="Community">
     <div class="membership-container">
       
       <!-- Section Header (Centered) -->
       <div class="membership-header">
-        <h2 class="membership-heading">Membership & Community</h2>
+        <h2 class="membership-heading">
+          <span class="membership-heading-bold">Community</span>
+        </h2>
       </div>
 
-      <!-- Block 1: Student Membership (Image Left, Content Right) -->
-      <div class="membership-story-block story-block-1">
-        <div class="story-asset-col">
-          <img 
-            src="assets/media/tech-community-1.jpg" 
-            alt="ATBU Developers Club student builders assembly — tech community 1" 
-            class="story-image"
-            loading="lazy" 
-          />
-        </div>
-
-        <div class="story-content-col">
-          <h3 class="story-title">Student Membership</h3>
-          <p class="story-paragraph">
-            Membership is open to every registered student of Abubakar Tafawa Balewa University across all faculties and departments. Gain access to hands-on bootcamps, collaborative software teams, peer mentorship, and verified club credentials with an official Membership Identification Number.
-          </p>
-          <div class="story-action">
-            <a href="#faq" class="story-cta-pill" aria-label="Membership Details">
-              <span>Membership Details</span>
-              <svg class="story-cta-arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Organic Dotted / Dashed Path Connector 1 -->
-      <div class="story-connector-wrap story-connector-mid" aria-hidden="true">
-        <svg class="story-connector-svg" viewBox="0 0 1000 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M 320 10 C 320 80, 680 40, 680 110" stroke="currentColor" stroke-width="2.5" stroke-dasharray="6 8" stroke-linecap="round"></path>
-        </svg>
-      </div>
-
-      <!-- Block 2: Active Student Community (Content Left, Image Right) -->
+      <!-- Block: Active Student Community (Content Left, Image Right) -->
       <div class="membership-story-block story-block-2">
         <div class="story-content-col">
           <h3 class="story-title">

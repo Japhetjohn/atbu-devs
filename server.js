@@ -90,11 +90,10 @@ const server = http.createServer((req, res) => {
     res.setHeader('X-Frame-Options', 'SAMEORIGIN');
     res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
 
-    if (pathname === '/index.html') {
-      res.setHeader('Cache-Control', 'no-cache, must-revalidate');
-    } else {
-      res.setHeader('Cache-Control', 'public, max-age=86400');
-    }
+    // Always disable caching for local development so style changes reflect immediately without browser hangs
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
 
     const stream = fs.createReadStream(filePath);
     stream.pipe(res);
