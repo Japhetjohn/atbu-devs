@@ -1905,9 +1905,15 @@ a {
   word-break: break-word;
 }
 
+.faq-heading-light {
+  font-weight: 350;
+  color: #0f172a;
+}
+
 .faq-heading-bold {
   font-weight: 850;
-  color: #080c14; /* Bold dark charcoal segment */
+  color: var(--color-peach-dark, #C2542D); /* Brand accent tone matching other sections */
+  letter-spacing: -0.04em;
 }
 
 /* FAQ Accordion List (Clean Hairline Dividing Rows) */
@@ -1940,7 +1946,7 @@ a {
 }
 
 .faq-question-btn:hover {
-  color: #0f172a;
+  color: var(--color-peach-dark, #C2542D);
 }
 
 .faq-question-text {
@@ -1967,18 +1973,18 @@ a {
 
 @media (hover: hover) and (pointer: fine) {
   .faq-question-btn:hover .faq-chevron {
-    color: #475569;
+    color: var(--color-peach-dark, #C2542D);
   }
 }
 
-/* Active / Open State: Highlight Question Text and Chevron */
+/* Active / Open State: Highlight Question Text and Chevron to Match Other Highlighted Sections */
 .faq-item.is-open .faq-question-text {
-  color: #080c14; /* Crisp dark charcoal emphasis */
+  color: var(--color-peach-dark, #C2542D); /* Peach Glow brand accent matching other sections */
   font-weight: 700;
 }
 
 .faq-item.is-open .faq-chevron {
-  color: #0284c7; /* Primary brand blue indicator */
+  color: var(--color-peach-dark, #C2542D);
   transform: rotate(180deg);
 }
 
