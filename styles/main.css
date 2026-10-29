@@ -2452,15 +2452,20 @@ a {
     letter-spacing: 0.04em;
   }
 
-  /* High-Impact Mobile Hero Display: Typography & Sizing Claiming ~70% Viewport Height */
+  /* Compact Mobile Hero Display: Closes large gaps between header and partner section */
+  .hero-section {
+    min-height: auto;
+    justify-content: flex-start;
+  }
+
   .hero-body {
-    flex: 1;
+    flex: initial;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically centered as one cohesive unit */
+    justify-content: flex-start;
     width: 100%;
-    min-height: calc(100dvh - 78px);
-    padding: 2.25rem 1.5rem 3rem 1.5rem;
+    min-height: auto;
+    padding: 1.5rem 1.5rem 2.25rem 1.5rem;
     box-sizing: border-box;
   }
 
@@ -2479,10 +2484,10 @@ a {
   }
 
   .hero-headline {
-    font-size: clamp(2.75rem, 11vw, 3.65rem);
-    line-height: 1.14;
+    font-size: clamp(2.45rem, 10vw, 3.4rem);
+    line-height: 1.12;
     letter-spacing: -0.04em;
-    margin-bottom: 1.65rem;
+    margin-bottom: 1.25rem;
     width: 100%;
     word-break: break-word;
   }
@@ -3062,8 +3067,13 @@ a {
 }
 
 @media (max-width: 480px) {
+  .hero-section {
+    min-height: auto;
+    justify-content: flex-start;
+  }
+
   .hero-header {
-    padding: 1rem 1.25rem;
+    padding: 1rem 1.25rem 0.5rem 1.25rem;
   }
 
   .header-actions {
@@ -3075,12 +3085,12 @@ a {
   }
 
   .hero-body {
-    flex: 1;
+    flex: initial;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 2rem 1.25rem 2.5rem 1.25rem;
-    min-height: calc(100dvh - 72px);
+    justify-content: flex-start;
+    padding: 1rem 1.25rem 2rem 1.25rem;
+    min-height: auto;
     box-sizing: border-box;
     width: 100%;
   }
@@ -3100,15 +3110,15 @@ a {
   }
 
   .hero-headline {
-    font-size: clamp(2.35rem, 9.8vw, 2.95rem);
+    font-size: clamp(2.2rem, 9.5vw, 2.85rem);
     line-height: 1.15;
-    margin-bottom: 1.35rem;
+    margin-bottom: 1rem;
   }
 
   .hero-description {
-    font-size: 1.12rem;
-    line-height: 1.62;
-    margin-bottom: 2rem;
+    font-size: 1.05rem;
+    line-height: 1.58;
+    margin-bottom: 1.5rem;
     max-width: 100%;
   }
 
@@ -3137,7 +3147,7 @@ a {
 
   /* Responsive Partners Section for Mobile Phones */
   .partners-section {
-    padding: 2.5rem 0 3rem 0;
+    padding: 1.75rem 0 2.5rem 0;
   }
 
   .partners-heading {
