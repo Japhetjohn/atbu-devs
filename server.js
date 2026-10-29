@@ -101,22 +101,28 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, '0.0.0.0', () => {
-  console.log(`\n======================================================`);
-  console.log(`🚀 ATBUDEVS Website Production Server is RUNNING!`);
-  console.log(`📡 Port:        ${PORT}`);
-  console.log(`📡 Environment: ${process.env.NODE_ENV || 'production'}`);
-  console.log(`📡 Health URL:  http://0.0.0.0:${PORT}/health`);
-  console.log(`======================================================\n`);
-});
+function startServer(portToTry) {
+  server.listen(portToTry, '0.0.0.0', () => {
+    const actualPort = server.address().port;
+    console.log(`\n======================================================`);
+    console.log(`🚀 ATBUDEVS Website Production Server is RUNNING!`);
+    console.log(`📡 Port:        ${actualPort}`);
+    console.log(`📡 URL:         http://localhost:${actualPort}`);
+    console.log(`📡 Environment: ${process.env.NODE_ENV || 'production'}`);
+    console.log(`📡 Health URL:  http://localhost:${actualPort}/health`);
+    console.log(`======================================================\n`);
+  });
+}
 
 server.on('error', (err) => {
   if (err.code === 'EADDRINUSE' && !process.env.PORT) {
-    const fallbackPort = PORT + 1;
-    console.warn(`Port ${PORT} in use, trying ${fallbackPort}...`);
-    server.listen(fallbackPort, '0.0.0.0');
+    const nextPort = PORT + 1;
+    console.warn(`Port ${PORT} in use, trying ${nextPort}...`);
+    startServer(nextPort);
   } else {
     console.error('Server error:', err);
     process.exit(1);
   }
 });
+
+startServer(PORT);

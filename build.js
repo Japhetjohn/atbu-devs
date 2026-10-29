@@ -28,7 +28,7 @@ function build() {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AtbuDev's Club — Abubakar Tafawa Balewa University Developers Club</title>
-  <meta name="description" content="Official website of the Abubakar Tafawa Balewa University Developers Club (AtbuDev's Club). Build real software and grow as a developer." />
+  <meta name="description" content="Official website of the Abubakar Tafawa Balewa University Developers Club (AtbuDev's Club). Build real solutions and grow as a leader." />
   
   <!-- Official Favicons & Touch Icons -->
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
