@@ -10,28 +10,38 @@
 
 :root {
   /* Official Brand Palette — Mandatory (Do Not Modify) */
-  --color-peach-glow: #FFC09F;
-  --color-light-gold: #FFEE93;
-  --color-lemon-chiffon: #FCF5C7;
-  --color-light-blue: #A0CED9;
-  --color-celadon: #ADF7B6;
+  /* ==========================================================================
+     COHESIVE THREE-COLOR SYSTEM (White Main Background)
+     1. Primary Brand Colour:    #A0CED9 (Light Blue — Buttons, Active States, Links)
+     2. Secondary Brand Colour:  #FFC09F (Peach Glow — Headline Highlights, Button Hover)
+     3. Main Neutral Background: #FFFFFF (Clean White Canvas — All Content Sections)
+     ========================================================================== */
+  --color-primary-brand: #A0CED9;      /* Light Blue */
+  --color-secondary-brand: #FFC09F;    /* Peach Glow */
+  --color-neutral-bg: #FFFFFF;         /* White Main Background */
 
-  /* Neutrals & Accessible Canvas */
+  /* Retained Palette Tokens for Reference */
+  --color-peach-glow: #FFC09F;
+  --color-light-blue: #A0CED9;
+  --color-lemon-chiffon: #FCF5C7;
+  --color-warm-cream: #FFFFFF;
+
+  /* Neutrals & Accessible Dark Surfaces */
   --color-white: #ffffff;
-  --color-warm-cream: #FAF8F5;
+  --color-bg-dark: #080c14;            /* Charcoal Navy Base (Hero & Footer) */
+  --color-text-dark: #0f172a;          /* Deep Charcoal Typography on White */
   --color-text-body: rgba(255, 255, 255, 0.85);
   --color-text-muted: rgba(255, 255, 255, 0.65);
   --color-text-subtle: rgba(255, 255, 255, 0.50);
-  --color-bg-dark: #080c14;
   --color-border: rgba(255, 255, 255, 0.12);
 
-  /* Semantic UI Tokens */
-  --color-primary-cta: var(--color-celadon);
-  --color-primary-cta-hover: var(--color-light-gold);
+  /* Centralized Semantic UI Tokens */
+  --color-primary-cta: var(--color-primary-brand);         /* #A0CED9 Light Blue */
+  --color-primary-cta-hover: var(--color-secondary-brand); /* #FFC09F Peach Glow */
   --color-primary-cta-text: #06130b;
 
-  --color-link: var(--color-light-blue);
-  --color-link-hover: var(--color-peach-glow);
+  --color-link: var(--color-primary-brand);
+  --color-link-hover: var(--color-secondary-brand);
 
   /* Typography Stack — Modern Editorial Sans-Serif (Inter Tight + Manrope) */
   --font-family: 'Inter Tight', 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -53,6 +63,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  overflow-y: auto;
   scroll-behavior: smooth;
 }
 
@@ -60,15 +71,7 @@ body {
   min-height: 100%;
   background-color: var(--color-bg-dark);
   overflow-x: hidden;
-}
-
-/* On standard desktop viewports, hero is single-screen height, with smooth vertical scrolling to content below */
-@media (min-width: 1025px) {
-  html, body {
-    min-height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
+  overflow-y: auto;
 }
 
 a {
@@ -168,7 +171,7 @@ a {
   font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: var(--color-lemon-chiffon);
+  color: var(--color-primary-brand);
   margin-top: 2px;
 }
 
@@ -336,7 +339,7 @@ a {
 }
 
 .mobile-menu-toggle:focus-visible {
-  outline: 2px solid var(--color-celadon);
+  outline: 2px solid var(--color-primary-brand);
   outline-offset: 4px;
   border-radius: 4px;
 }
@@ -387,7 +390,7 @@ a {
 /* Hover micro-interaction: organic stretch */
 @media (hover: hover) and (pointer: fine) {
   .mobile-menu-toggle:hover .hamburger-line {
-    background-color: var(--color-celadon);
+    background-color: var(--color-primary-brand);
   }
   .mobile-menu-toggle:hover .hamburger-line-top,
   .mobile-menu-toggle:hover .hamburger-line:nth-child(1) {
@@ -408,7 +411,7 @@ a {
 .mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
   width: 22px;
   transform: translateY(3px) rotate(45deg);
-  background-color: var(--color-celadon);
+  background-color: var(--color-primary-brand);
 }
 
 .mobile-menu-toggle[aria-expanded="true"] .hamburger-line-mid,
@@ -421,7 +424,7 @@ a {
 .mobile-menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
   width: 22px;
   transform: translateY(-3px) rotate(-45deg);
-  background-color: var(--color-celadon);
+  background-color: var(--color-primary-brand);
 }
 
 /* --------------------------------------------------------------------------
@@ -506,15 +509,15 @@ a {
 
 @media (hover: hover) and (pointer: fine) {
   .mobile-drawer-close:hover {
-    background: rgba(173, 247, 182, 0.14);
-    border-color: var(--color-celadon);
-    color: var(--color-celadon);
+    background: rgba(160, 206, 217, 0.14);
+    border-color: var(--color-primary-brand);
+    color: var(--color-primary-brand);
     transform: rotate(90deg);
   }
 }
 
 .mobile-drawer-close:focus-visible {
-  outline: 2px solid var(--color-celadon);
+  outline: 2px solid var(--color-primary-brand);
   outline-offset: 2px;
 }
 
@@ -541,14 +544,14 @@ a {
 
 @media (hover: hover) and (pointer: fine) {
   .mobile-nav-link:hover {
-    color: var(--color-celadon);
+    color: var(--color-primary-brand);
     background-color: rgba(255, 255, 255, 0.06);
     transform: translateX(4px);
   }
 }
 
 .mobile-nav-link:focus-visible {
-  outline: 2px solid var(--color-celadon);
+  outline: 2px solid var(--color-primary-brand);
   outline-offset: 2px;
 }
 
@@ -728,7 +731,7 @@ a {
    -------------------------------------------------------------------------- */
 .partners-section {
   position: relative;
-  background-color: var(--color-lemon-chiffon);
+  background-color: var(--color-neutral-bg);
   padding: 3.75rem 0 4.25rem 0; /* py-15 / ~60px-68px vertical breathing room */
   width: 100%;
   max-width: 100vw;
@@ -804,12 +807,12 @@ a {
 
 .partners-carousel::before {
   left: 0;
-  background: linear-gradient(to right, var(--color-lemon-chiffon) 0%, rgba(252, 245, 199, 0) 100%);
+  background: linear-gradient(to right, var(--color-neutral-bg) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .partners-carousel::after {
   right: 0;
-  background: linear-gradient(to left, var(--color-lemon-chiffon) 0%, rgba(252, 245, 199, 0) 100%);
+  background: linear-gradient(to left, var(--color-neutral-bg) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 /* Continuous Marquee Track (Hardware-Accelerated 3D Transform) */
@@ -919,7 +922,7 @@ a {
    -------------------------------------------------------------------------- */
 .about-section {
   position: relative;
-  background-color: var(--color-lemon-chiffon);
+  background-color: var(--color-neutral-bg);
   padding: 1.75rem 0 5.5rem 0; /* Continuous flow from partners section without borders */
   width: 100%;
   border: none;
@@ -1079,7 +1082,7 @@ a {
 }
 
 .about-cta-pill:hover {
-  background-color: var(--color-primary-cta-hover); /* Light Gold #FFEE93 */
+  background-color: var(--color-secondary-brand); /* Peach Glow #FFC09F */
   transform: translate(-1px, -1px);
   box-shadow: 3px 3px 0px #06130b;
 }
@@ -1103,7 +1106,7 @@ a {
    -------------------------------------------------------------------------- */
 .membership-section {
   position: relative;
-  background-color: var(--color-light-gold); /* Complementary solid palette tone #FFEE93 */
+  background-color: var(--color-neutral-bg); /* Complementary solid palette tone #FFEE93 */
   padding: 6.5rem 0 7.5rem 0; /* py-28 generous breathing space */
   width: 100%;
   border: none;
@@ -1235,7 +1238,7 @@ a {
 }
 
 .story-cta-pill:hover {
-  background-color: var(--color-peach-glow); /* Smooth brand accent shift on Light Gold */
+  background-color: var(--color-secondary-brand); /* Peach Glow #FFC09F */
   transform: translate(-1px, -1px);
   box-shadow: 3px 3px 0px #06130b;
 }
@@ -1284,7 +1287,7 @@ a {
    -------------------------------------------------------------------------- */
 .founder-section {
   position: relative;
-  background-color: var(--color-lemon-chiffon); /* Bright off-white/cream palette tone #FCF5C7 */
+  background-color: var(--color-lemon-chiffon, #FCF5C7); /* Reverted to classic Lemon Chiffon #FCF5C7 */
   background-image: 
     linear-gradient(to right, rgba(8, 12, 20, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(8, 12, 20, 0.04) 1px, transparent 1px);
@@ -1466,7 +1469,7 @@ a {
 }
 
 .founder-cta-pill:hover {
-  background-color: var(--color-light-gold); /* Light Gold #FFEE93 */
+  background-color: var(--color-secondary-brand); /* Light Gold #FFEE93 */
   transform: translate(-1px, -1px);
   box-shadow: 3px 3px 0px #06130b;
 }
@@ -1489,7 +1492,7 @@ a {
    ========================================================================== */
 .activities-section {
   position: relative;
-  background-color: var(--color-lemon-chiffon); /* Pristine light warm tone */
+  background-color: var(--color-neutral-bg); /* Pristine light warm tone */
   padding: 6.5rem 0 7.5rem 0;
   width: 100%;
   max-width: 100vw;
@@ -1725,7 +1728,7 @@ a {
 
 @media (hover: hover) and (pointer: fine) {
   .slide-nav-btn:hover {
-    background-color: var(--color-celadon);
+    background-color: var(--color-primary-brand);
     transform: translate(-1px, -1px);
     box-shadow: 3px 3px 0px #06130b;
   }
@@ -1771,7 +1774,7 @@ a {
    ========================================================================== */
 .faq-section {
   position: relative;
-  background-color: var(--color-warm-cream, #FAF8F5); /* Refined warm off-white / light cream canvas */
+  background-color: var(--color-neutral-bg); /* Refined warm off-white / light cream canvas */
   color: #0f172a;
   padding: 6rem 0 6.5rem 0; /* py-24 generous breathing space */
   width: 100%;
@@ -1875,14 +1878,14 @@ a {
   }
 }
 
-/* Active / Open State: Highlight Question Text and Chevron in Brand Emerald Tone */
+/* Active / Open State: Highlight Question Text and Chevron */
 .faq-item.is-open .faq-question-text {
-  color: #0d7653; /* Primary brand emerald green tone (5.31:1 against #FAF8F5, WCAG AAA) */
+  color: #080c14; /* Crisp dark charcoal emphasis */
   font-weight: 700;
 }
 
 .faq-item.is-open .faq-chevron {
-  color: #0d7653;
+  color: #0284c7; /* Primary brand blue indicator */
   transform: rotate(180deg);
 }
 
@@ -1977,7 +1980,7 @@ a {
   font-size: 0.95rem;
   font-style: italic;
   font-weight: 650;
-  color: var(--color-celadon); /* #ADF7B6 */
+  color: var(--color-primary-brand); /* #ADF7B6 */
   letter-spacing: 0.02em;
   display: block;
 }
@@ -2022,7 +2025,7 @@ a {
 }
 
 .footer-cta-pill:hover {
-  background-color: var(--color-peach-glow);
+  background-color: var(--color-secondary-brand);
   transform: translate(-1px, -1px);
   box-shadow: 3px 3px 0px #06130b;
 }
